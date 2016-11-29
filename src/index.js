@@ -8,6 +8,8 @@ import createLogger from 'redux-logger'
 import Routes from './routes'
 import reducer from './reducers'
 
+import '../styles/index.scss'
+
 const middleware = [thunk, createLogger]
 
 const store = createStore(
