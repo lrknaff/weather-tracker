@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class App extends Component {
   render() {
@@ -12,13 +12,13 @@ class App extends Component {
 const mapStateToProps = state => {
   // return an object of redux store data
   // that you'd like available in your component
-  return {};
+  return {}
 }
 
 const mapDispatchToProps = dispatch => {
-  // return an object of methods you'd like 
+  // return an object of methods you'd like
   // to dispatch as redux actions
-  return {};
+  return {}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App)
