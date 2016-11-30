@@ -8,7 +8,7 @@ class App extends Component {
 
   componentWillMount() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(Geohelpers.onPositionReceived)
+      navigator.geolocation.getCurrentPosition(Geohelpers.onPositionReceived, Geohelpers.onPositionFailed)
     }
   }
 

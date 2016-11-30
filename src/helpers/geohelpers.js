@@ -4,7 +4,7 @@ const Geohelpers = {
     console.log(position)
   },
   onPositionFailed: (error) => {
-    console.error(error)
+    console.error(new Error('We need to add a JSX element fam'))
   },
 }
 
