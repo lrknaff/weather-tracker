@@ -1,6 +1,8 @@
 // @import '/config/all.scss';
 // @import '/partials/all.scss';
 @import "variables.scss";
+@import "debug.scss";
+@import "mixins.scss";
 
 body {
   background: $main-background;
