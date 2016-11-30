@@ -7,13 +7,6 @@ export const receiveLocation = (latitude, longitude) => {
   }
 }
 
-export const promptUser = () => {
-  return {
-    type: 'PROMPT_USER',
-    permission: false,
-  }
-}
-
 export const RECEIVE_FORECAST = 'RECEIVE_FORECAST'
 
 export const receiveForecast = (forecastData) => ({
