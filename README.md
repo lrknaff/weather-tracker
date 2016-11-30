@@ -1,10 +1,5 @@
-# React/Redux Weather Forecast Application
+##Weather Tracker - A Weather App
 
-This project template was built with [Create React App](https://github.com/facebookincubator/create-react-app).
+This is a weather app built using React, Redux, and React Router. It makes use of the [Create React App package](https://github.com/facebookincubator/create-react-app).
 
-## Setup
-
-### `npm install`
-### `npm start`
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Project guidelines](http://frontend.turing.io/projects/weather-forecast.html)

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 class App extends Component {
   render() {
     return (
-      <div>Hey!</div>
+      <div>Hello! This is a test. If you can read this, then React and webpack are working.</div>
     )
   }
 }
