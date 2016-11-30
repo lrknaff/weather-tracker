@@ -11,10 +11,9 @@ class App extends Component {
   componentWillMount() {
     let location
     if (navigator.geolocation) {
-      location = navigator.geolocation.getCurrentPosition(Geohelpers.onPositionReceived, Geohelpers.onPositionFailed).then(console.log('test'))
+      location = navigator.geolocation.getCurrentPosition(Geohelpers.onPositionReceived, Geohelpers.onPositionFailed)
       console.log(location)
     }
-
   }
   render() {
     return (
