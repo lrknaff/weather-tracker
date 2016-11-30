@@ -5,4 +5,4 @@ const exampleReducer = (state = {}, action) => {
   }
 }
 
-export default exampleReducer;
+export default exampleReducer
