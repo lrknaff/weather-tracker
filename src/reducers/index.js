@@ -1,3 +1,6 @@
+import { combineReducers } from 'redux'
+// import child reducers
+
 const exampleReducer = (state = 0, action) => {
   switch (action.type) {
     case 'TEST':
@@ -7,4 +10,6 @@ const exampleReducer = (state = 0, action) => {
   }
 }
 
-export default exampleReducer
+const reducer = combineReducers(exampleReducer)
+
+export default reducer
