@@ -6,19 +6,24 @@ import React from 'react'
 import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
 import Routes from './routes'
-import reducer from './reducers'
+import exampleReducer from './reducers'
 
 import '../styles/index.scss'
 
 const middleware = [thunk, createLogger]
 
-const store = createStore(
-  combineReducers({
-    weatherApp: reducer,
-  }),
-  {}, // initial state object
-  applyMiddleware(...middleware)
-)
+const enhancers = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
+const store = createStore(exampleReducer, enhancers)
+
+// const store = createStore(
+//   combineReducers({
+//     weatherApp: reducer,
+//   }),
+//   {}, // initial state object
+//   applyMiddleware(...middleware)
+// )
+
 
 render(
   <Provider store={store}>

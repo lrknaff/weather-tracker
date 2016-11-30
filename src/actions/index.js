@@ -1,3 +1,9 @@
+export const test = () => {
+  return {
+    type: 'TEST',
+  }
+}
+
 export const RECEIVE_FORECAST = 'RECEIVE_FORECAST'
 
 export const receiveForecast = (forecastData) => ({
