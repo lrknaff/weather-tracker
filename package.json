@@ -21,6 +21,7 @@
     "css-loader": "0.24.0",
     "detect-port": "1.0.0",
     "dotenv": "2.0.0",
+    "enzyme": "^2.6.0",
     "eslint": "^3.6.0",
     "eslint-config-airbnb": "^11.1.0",
     "eslint-loader": "^1.6.1",
@@ -42,7 +43,9 @@
     "path-exists": "2.1.0",
     "postcss-loader": "0.13.0",
     "promise": "7.1.1",
+    "react-addons-test-utils": "^15.4.1",
     "react-dev-utils": "^0.2.1",
+    "react-scripts": "0.7.0",
     "recursive-readdir": "2.1.0",
     "redux-logger": "^2.6.1",
     "rimraf": "2.5.4",
@@ -55,6 +58,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-redux": "^4.4.5",
@@ -64,7 +68,8 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "test": "react-scripts test --env=jsdom"
   },
   "eslintConfig": {
     "extends": "react-app"
