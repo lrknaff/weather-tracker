@@ -1,10 +1,6 @@
-const exampleReducer = (state = 0, action) => {
-  switch (action.type) {
-    case 'TEST':
-      return state + 1
-    default:
-      return state
-  }
-}
+import { combineReducers } from 'redux'
+import getLocation from './geolocation'
 
-export default exampleReducer
+const reducer = combineReducers({ getLocation })
+
+export default reducer

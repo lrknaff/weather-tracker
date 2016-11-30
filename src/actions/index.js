@@ -1,6 +1,16 @@
-export const test = () => {
+export const receiveLocation = (latitude, longitude) => {
   return {
-    type: 'TEST',
+    type: 'RECEIVE_LOCATION',
+    completed: false,
+    latitude,
+    longitude,
+  }
+}
+
+export const promptUser = () => {
+  return {
+    type: 'PROMPT_USER',
+    permission: false,
   }
 }
 
