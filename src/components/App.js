@@ -6,8 +6,6 @@ import HeaderContainer from '../containers/HeaderContainer'
 import { fetchForecast, promptUser } from '../actions/index'
 
 class App extends Component {
-
-
   componentWillMount() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -16,6 +14,7 @@ class App extends Component {
       })
     }
   }
+
   render() {
     return (
       <HeaderContainer />
