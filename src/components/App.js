@@ -4,8 +4,6 @@ import { bindActionCreators } from 'redux'
 import axios from 'axios'
 import HeaderContainer from '../containers/HeaderContainer'
 import { fetchForecast, promptUser } from '../actions/index'
-import Geohelpers from '../helpers/geohelpers'
-
 
 class App extends Component {
 
