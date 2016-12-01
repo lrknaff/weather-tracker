@@ -1,11 +1,10 @@
-const getWeather = (state = {}, action) => {
+const getCurrentWeather = (state = {}, action) => {
   switch (action.type) {
     case 'RECEIVE_FORECAST':
-      console.log('hi')
-      return Object.assign({}, 'hi')
+      return Object.assign({}, action.forecast.data)
     default:
       return state
   }
 }
 
-export default getWeather
+export default getCurrentWeather

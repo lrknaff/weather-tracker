@@ -16,14 +16,6 @@ const enhancers = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS
 
 const store = createStore(reducer, enhancers, applyMiddleware(...middleware))
 
-// const store = createStore(
-//   reducer,
-//   enhancers,
-//   {}, // initial state object
-//   applyMiddleware(...middleware)
-// )
-
-
 render(
   <Provider store={store}>
     <Routes history={browserHistory} />

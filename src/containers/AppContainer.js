@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { receiveLocation, fetchForecast } from '../actions/index'
+import { updateLocation, fetchForecast } from '../actions/index'
 import App from '../components/App'
 
 const mapStateToProps = (state) => ({
@@ -12,14 +12,10 @@ const mapDispatchToProps = (dispatch) => {
     fetchForecast: (position) => {
       dispatch(fetchForecast(position))
     },
-    receiveLocation: () => {
-      dispatch(receiveLocation())
+    updateLocation: (position) => {
+      dispatch(updateLocation(position))
     },
   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
-
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators(fetchForecast, dispatch)
-// }
