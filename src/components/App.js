@@ -10,7 +10,6 @@ class App extends Component {
       navigator.geolocation.getCurrentPosition((position) => {
         this.props.updateLocation(position)
         this.props.fetchForecast(position)
-        console.log(position)
       })
     }
   }

@@ -30,7 +30,6 @@ export const fetchForecast = (position) => {
       http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&APPID=7b05601290f3c029e2162277fc5b288d
     `)
       .then(json => {
-        console.log(json)
         dispatch(receiveForecast(json))
       })
       .catch(error => console.error('Error with api call...', error.message))

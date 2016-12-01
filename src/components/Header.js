@@ -4,13 +4,15 @@ class Header extends Component {
 
 
   render() {
-    // const location = this.props.state.location
-    // const temp = this.props.state.temp
-    // const weatherType = this.props.state.weatherType
-    console.log(this.props.location)
+    const location = this.props.state.getCurrentWeather.location
+    const temp = this.props.state.getCurrentWeather.temp
+    const weatherType = this.props.state.getCurrentWeather.weatherType
+
     return (
       <header>
-        Hi
+        {location}
+        {temp}
+        {weatherType}
       </header>
     )
   }
