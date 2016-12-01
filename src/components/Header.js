@@ -8,19 +8,26 @@ class Header extends Component {
   render() {
     const { location, temp, weatherType } = this.props.state.getCurrentWeather
     let data
+    let loading
     if (this.props.state.getCurrentWeather.temp) {
       const tempF = Math.floor(convertKelvinToFahrenheit(temp))
-      data = <p>The current weather in {location} is {tempF} &deg;F and {weatherType}.</p>
+      data = (
+        <div>
+          <p>The current weather in {location} is {tempF} &deg;F and {weatherType}.</p>
+          <Link to="/foo">View Extended Forecast</Link>
+        </div>)
     } else {
-      data = 'Loading...'
-      return <Loader />
+      data = ''
+      loading = <Loader />
     }
 
     return (
-      <header>
-        {data}
-        <Link to="/foo">View Extended Forecast</Link>
-      </header>
+      <main>
+        <header>
+          {data}
+        </header>
+        {loading}
+      </main>
     )
   }
 
