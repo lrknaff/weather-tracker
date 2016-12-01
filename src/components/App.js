@@ -5,7 +5,7 @@ import HeaderContainer from '../containers/HeaderContainer'
 import { fetchForecast, updateLocation } from '../actions/index'
 
 class App extends Component {
-  componentWillMount() {
+  componentDidMount() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.props.updateLocation(position)
