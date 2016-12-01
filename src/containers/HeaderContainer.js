@@ -4,7 +4,7 @@ import { receiveLocation, promptUser } from '../actions/index'
 import Header from '../components/Header'
 
 const mapStateToProps = (state) => {
-  return { location: state.location }
+  return { location: state.location, temp: state.temp, weatherType: state.weatherType }
 }
 
 // const mapDispatchToProps = (dispatch) => {
