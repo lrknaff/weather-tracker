@@ -25,6 +25,7 @@
     "imports-first": "off",
     "arrow-parens": "off",
     "arrow-body-style": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    'no-debugger': 'off'
   }
 }
