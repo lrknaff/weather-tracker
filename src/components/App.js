@@ -13,10 +13,7 @@ class App extends Component {
   componentWillMount() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
-        this.props.fetchForecast(position)// good
-        // dispatch(fetchForecast()) // good
-        // const { fetchFOrecast } = this.props
-        // fetchForecast(position) // Wrong
+        this.props.fetchForecast(position)
         console.log(position)
       })
     }
