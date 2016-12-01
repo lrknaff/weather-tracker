@@ -9,7 +9,7 @@ class Header extends Component {
     let data
     if (this.props.state.getCurrentWeather.temp) {
       const tempF = Math.floor(convertKelvinToFahrenheit(temp))
-      data = <p>The current weather in {location} is {weatherType} and {tempF}</p>
+      data = <p>The current weather in {location} is {weatherType} and {tempF} &deg;F.</p>
     } else {
       data = 'Loading...'
       return <Loader />
