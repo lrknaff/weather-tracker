@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const updateLocation = (position) => {
+const receiveLocation = (position) => {
   return {
     type: 'RECEIVE_LOCATION',
     completed: false,
@@ -16,9 +16,14 @@ const receiveForecast = (json) => {
   }
 }
 
+export const updateLocation = (position) => {
+  return (dispatch) => {
+    return dispatch(receiveLocation(position))
+  }
+}
+
 export const fetchForecast = (position) => {
   return (dispatch) => {
-    dispatch(updateLocation(position))
     return axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&APPID=7b05601290f3c029e2162277fc5b288d
     `)
       .then(json => {

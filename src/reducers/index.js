@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import setLocation from './setLocation'
-import getWeather from './getWeather'
+import getCurrentWeather from './getWeather'
 
-const reducer = combineReducers({ setLocation, getWeather })
+const reducer = combineReducers({ setLocation, getCurrentWeather })
 
 export default reducer

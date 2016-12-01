@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import axios from 'axios'
 import HeaderContainer from '../containers/HeaderContainer'
-import { fetchForecast, promptUser } from '../actions/index'
+import { fetchForecast, updateLocation } from '../actions/index'
 
 class App extends Component {
   componentWillMount() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
+        this.props.updateLocation(position)
         this.props.fetchForecast(position)
         console.log(position)
       })
@@ -23,6 +24,7 @@ class App extends Component {
 }
 
 App.propTypes = {
+  updateLocation: React.PropTypes.func.isRequired,
   fetchForecast: React.PropTypes.func.isRequired,
 }
 
