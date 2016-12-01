@@ -1,4 +1,4 @@
-const getLocation = (state = {}, action) => {
+const setLocation = (state = {}, action) => {
   switch (action.type) {
     case 'RECEIVE_LOCATION':
       return Object.assign({}, { latitude: action.latitude, longitude: action.longitude })
@@ -7,4 +7,4 @@ const getLocation = (state = {}, action) => {
   }
 }
 
-export default getLocation
+export default setLocation
