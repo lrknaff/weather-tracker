@@ -7,15 +7,15 @@ const mapStateToProps = (state) => ({
   state,
 })
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    prompt: () => {
-      dispatch(promptUser())
-    },
-    receiveLocation: () => {
-      dispatch(receiveLocation())
-    },
-  }
-}
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     prompt: () => {
+//       dispatch(promptUser())
+//     },
+//     receiveLocation: () => {
+//       dispatch(receiveLocation())
+//     },
+//   }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(mapStateToProps)(Header)
