@@ -13,7 +13,10 @@ class App extends Component {
   componentWillMount() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
-        fetchForecast(position)
+        this.props.fetchForecast(position)// good
+        // dispatch(fetchForecast()) // good
+        // const { fetchFOrecast } = this.props
+        // fetchForecast(position) // Wrong
         console.log(position)
       })
     }
@@ -23,6 +26,10 @@ class App extends Component {
       <HeaderContainer />
     )
   }
+}
+
+App.propTypes = {
+  fetchForecast: React.PropTypes.func.isRequired,
 }
 
 export default App

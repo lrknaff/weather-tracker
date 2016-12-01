@@ -21,8 +21,11 @@ export const fetchForecast = (position) => {
   return (dispatch) => {
     axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&APPID=7b05601290f3c029e2162277fc5b288d
     `)
-      .then(data => data.json())
-      .then(json => dispatch(receiveForecast(json)))
+      .then(json => {
+        console.log(json)
+        dispatch(receiveForecast(json))
+        dispatch(receiveLocation())
+      })
   }
 }
 

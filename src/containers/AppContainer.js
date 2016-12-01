@@ -9,8 +9,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchForecast: () => {
-      dispatch(fetchForecast())
+    fetchForecast: (position) => {
+      dispatch(fetchForecast(position))
     },
     receiveLocation: () => {
       dispatch(receiveLocation())
@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 // const mapDispatchToProps = (dispatch) => {
 //   return bindActionCreators(fetchForecast, dispatch)
