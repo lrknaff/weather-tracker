@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import axios from 'axios'
 import HeaderContainer from '../containers/HeaderContainer'
 import { fetchForecast, updateLocation } from '../actions/index'
