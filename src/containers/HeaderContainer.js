@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { receiveLocation, promptUser } from '../actions/index'
 import Header from '../components/Header'
 
-const mapStateToProps = (state) => ({
-  state,
-})
+const mapStateToProps = (state) => {
+  return { location: state.location }
+}
 
 // const mapDispatchToProps = (dispatch) => {
 //   return {

@@ -12,7 +12,9 @@ const receiveLocation = (position) => {
 const receiveForecast = (json) => {
   return {
     type: 'RECEIVE_FORECAST',
-    forecast: json,
+    location: json.data.name,
+    temp: json.data.main.temp,
+    weatherType: json.data.weather[0].main,
   }
 }
 
