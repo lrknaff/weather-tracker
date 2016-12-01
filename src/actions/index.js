@@ -35,3 +35,14 @@ export const fetchForecast = (position) => {
       .catch(error => console.error('Error with api call...', error.message))
   }
 }
+export const fetchForecastByZip = (zip) => {
+  return (dispatch) => {
+    return axios.get(`
+    http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&APPID=7b05601290f3c029e2162277fc5b288d
+    `)
+      .then(json => {
+        dispatch(receiveForecast(json))
+      })
+      .catch(error => console.error('Error with api call...', error.message))
+  }
+}

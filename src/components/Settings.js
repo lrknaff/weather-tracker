@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 const Settings = () => {
   return (
     <div>
-      <input type="number" />
-      <h1>yo</h1>
+      <input type="number" ref="zip" />
+      <button onClick={() => this.props.fetchForecastByZip(this.refs.zip.value)}>Submit</button>
     </div>
 
   )
