@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 const Card = () => {
   return (
     <div>
-      <h1>yo</h1>
+      <h1> <Link to="/settings" >Add a pinned city.</Link></h1>
     </div>
 
   )
