@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const receiveLocation = (position) => {
+export const receiveLocation = (position) => {
   return {
     type: 'RECEIVE_LOCATION',
     completed: false,
@@ -9,7 +9,7 @@ const receiveLocation = (position) => {
   }
 }
 
-const receiveForecast = (json) => {
+export const receiveForecast = (json) => {
   return {
     type: 'RECEIVE_FORECAST',
     location: json.data.name,
