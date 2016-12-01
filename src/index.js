@@ -10,16 +10,15 @@ import reducer from './reducers'
 
 import '../styles/index.scss'
 
-const middleware = [thunk, createLogger]
+const middleware = [thunk]
 
 const enhancers = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
-const store = createStore(reducer, enhancers)
+const store = createStore(reducer, enhancers, applyMiddleware(...middleware))
 
 // const store = createStore(
-//   combineReducers({
-//     weatherApp: reducer,
-//   }),
+//   reducer,
+//   enhancers,
 //   {}, // initial state object
 //   applyMiddleware(...middleware)
 // )

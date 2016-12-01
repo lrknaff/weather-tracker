@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export const receiveLocation = (latitude, longitude) => {
   return {
     type: 'RECEIVE_LOCATION',
@@ -7,19 +9,25 @@ export const receiveLocation = (latitude, longitude) => {
   }
 }
 
-export const promptUser = () => {
+const receiveForecast = (json) => {
   return {
-    type: 'PROMPT_USER',
-    permission: false,
+    type: 'RECEIVE_FORECAST',
+    forecast: json,
   }
 }
 
-export const RECEIVE_FORECAST = 'RECEIVE_FORECAST'
-
-export const receiveForecast = (forecastData) => ({
+export const fetchForecast = (position) => {
   // action object
-})
-
-export const fetchForecast = options => dispatch => {
-  // return fetch API call
+  return (dispatch) => {
+    axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&APPID=7b05601290f3c029e2162277fc5b288d
+    `)
+      .then(json => {
+        console.log(json)
+        dispatch(receiveForecast(json))
+        dispatch(receiveLocation())
+      })
+  }
 }
+
+// export const fetchForecast = options => dispatch => {
+  // return fetch API call
