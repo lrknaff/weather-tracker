@@ -1,0 +1,20 @@
+.circle-wrapper {
+
+  bottom: 0;
+  height: 60px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+
+  .circle {
+
+    &:before {
+      background-color: white;
+    }
+
+  }
+
+}
