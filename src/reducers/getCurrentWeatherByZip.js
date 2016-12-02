@@ -1,7 +1,7 @@
-const getCurrentWeatherByZip = (state = {}, action) => {
+const getCurrentWeatherByZip = (state = [], action) => {
   switch (action.type) {
     case 'RECEIVE_FORECAST_ZIP':
-      return Object.assign({}, state, { location: action.location, temp: action.temp, weatherType: action.weatherType })
+      return [...state, { location: action.location, temp: action.temp, weatherType: action.weatherType }]
     default:
       return state
   }
