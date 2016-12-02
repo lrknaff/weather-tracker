@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import getCurrentWeather from '../../src/reducers/getCurrentWeather'
 
 describe('setLocation reducer', () => {
