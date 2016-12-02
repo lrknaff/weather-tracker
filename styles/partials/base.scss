@@ -1,3 +1,7 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
 body {
   color: white;
   font-family: $main-font;

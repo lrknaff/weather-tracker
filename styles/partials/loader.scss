@@ -1,20 +1,253 @@
-.circle-wrapper {
+// .circle-wrapper {
+//
+//   bottom: 0;
+//   height: 60px;
+//   left: 0;
+//   margin: auto;
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+//   width: 60px;
+//
+//   .circle {
+//
+//     &:before {
+//       background-color: white;
+//     }
+//
+//   }
+//
+// }
 
-  bottom: 0;
-  height: 60px;
-  left: 0;
+
+/* VARIABLES */
+/* Applies a stroke to the icons. Can use percentage for responsive */
+.climacon_component-stroke {
+  fill: white;
+  stroke-width: 0%;
+  stroke: black;
+}
+
+.climacon_component-fill {
+  fill: #A684FF;
+  stroke-width: 0%;
+  stroke: black;
+}
+
+/* GLOBAL */
+.wrapper {
+  width: 75%;
+  margin: 5% auto;
+  text-align: center;
+}
+
+/* SVG GLOBAL */
+svg {
   margin: auto;
-  position: absolute;
-  right: 0;
   top: 0;
-  width: 60px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  shape-rendering: geometricPrecision;
+}
 
-  .circle {
+g, path, circle, rect {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-animation-duration: 18s;
+          animation-duration: 18s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
 
-    &:before {
-      background-color: white;
-    }
+/* SUN */
+.climacon_componentWrap_sunSpoke .climacon_component-stroke_sunSpoke {
+  -webkit-animation-name: scale;
+          animation-name: scale;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-duration: 4.5s;
+          animation-duration: 4.5s;
+}
 
+.climacon_componentWrap_sunSpoke .climacon_component-stroke_sunSpoke:nth-child(even) {
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+}
+
+/* CLOUD SUN */
+.climacon_componentWrap-sun_cloud {
+  -webkit-animation-name: behindCloudMove, rotate;
+          animation-name: behindCloudMove, rotate;
+  -webkit-animation-iteration-count: 1, infinite;
+          animation-iteration-count: 1, infinite;
+  -webkit-animation-timing-function: ease-out, linear;
+          animation-timing-function: ease-out, linear;
+  -webkit-animation-delay: 0, 4.5s;
+          animation-delay: 0, 4.5s;
+  -webkit-animation-duration: 4.5s, 18s;
+          animation-duration: 4.5s, 18s;
+}
+
+.climacon_componentWrap-sun_cloud .climacon_componentWrap_sunSpoke .climacon_component-stroke_sunSpoke {
+  fill-opacity: 0.5;
+  -webkit-animation-name: fillOpacity, scale;
+          animation-name: fillOpacity, scale;
+  -webkit-animation-iteration-count: 1, infinite;
+          animation-iteration-count: 1, infinite;
+  -webkit-animation-delay: 4.5s, 0;
+          animation-delay: 4.5s, 0;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.climacon_componentWrap-sun_cloud .climacon_componentWrap_sunSpoke .climacon_component-stroke_sunSpoke:nth-child(even) {
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+}
+
+.climacon_iconWrap-sun .climacon_component-stroke_sunSpoke, .climacon_iconWrap-sunFill .climacon_component-stroke_sunSpoke {
+  fill-opacity: 1;
+  -webkit-animation-name: scale;
+          animation-name: scale;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+.climacon_iconWrap-sun .climacon_component-stroke_sunSpoke:nth-child(even), .climacon_iconWrap-sunFill .climacon_component-stroke_sunSpoke:nth-child(even) {
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+}
+
+.climacon-iconWrap_sunFill .climacon_component-stroke_sunSpoke {
+  fill-opacity: 1;
+  -webkit-animation-name: scale;
+          animation-name: scale;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+.climacon-iconWrap_sunFill .climacon_component-stroke_sunSpoke:nth-child(even) {
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+}
+
+.climacon_component-stroke_arrow-up {
+  fill-opacity: 0.5;
+  -webkit-animation-name: fillOpacity2, translateArrowUp;
+          animation-name: fillOpacity2, translateArrowUp;
+  -webkit-animation-duration: 4.5s;
+          animation-duration: 4.5s;
+}
+
+.climacon_component-stroke_arrow-down {
+  fill-opacity: 0.5;
+  -webkit-animation-name: fillOpacity2, translateArrowDown;
+          animation-name: fillOpacity2, translateArrowDown;
+  -webkit-animation-duration: 4.5s;
+          animation-duration: 4.5s;
+}
+
+.climacon_componentWrap-sunrise .climacon_component-stroke_sunSpoke, .climacon_componentWrap-sunset .climacon_component-stroke_sunSpoke {
+  -webkit-animation-name: scale;
+          animation-name: scale;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 4.5s;
+          animation-duration: 4.5s;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.climacon_componentWrap-sunrise .climacon_component-stroke_sunSpoke:nth-child(even), .climacon_componentWrap-sunset .climacon_component-stroke_sunSpoke:nth-child(even) {
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+}
+
+/* ANIMATIONS */
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
   }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
 
+@-webkit-keyframes scale {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform: scale(0.5, 0.5);
+            transform: scale(0.5, 0.5);
+  }
+}
+@keyframes scale {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform: scale(0.5, 0.5);
+            transform: scale(0.5, 0.5);
+  }
+}
+@-webkit-keyframes fillOpacity {
+  0% {
+    fill-opacity: 0.2;
+    stroke-opacity: 0.2;
+  }
+  100% {
+    fill-opacity: 1;
+    stroke-opacity: 1;
+  }
+}
+@keyframes fillOpacity {
+  0% {
+    fill-opacity: 0.2;
+    stroke-opacity: 0.2;
+  }
+  100% {
+    fill-opacity: 1;
+    stroke-opacity: 1;
+  }
 }

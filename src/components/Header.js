@@ -6,15 +6,29 @@ import Loader from './loader'
 class Header extends Component {
 
   render() {
-    const { location, temp, weatherType } = this.props.state.getCurrentWeather
+    const { state, test, fakeLocation, fakeTemp, fakeWeatherType } = this.props
+
+    let location
+    let temp
+    let weatherType
+
+    if (test) {
+      location = fakeLocation
+      temp = fakeTemp
+      weatherType = fakeWeatherType
+    } else {
+      location = state.getCurrentWeather.location
+      temp = state.getCurrentWeather.temp
+      weatherType = state.getCurrentWeather.weatherType
+    }
     let data
     let loading
-    if (this.props.state.getCurrentWeather.temp) {
+    if (this.props.test || state.getCurrentWeather.temp) {
       const tempF = Math.floor(convertKelvinToFahrenheit(temp))
       data = (
         <div>
-          <h2>The current weather in {location} is {tempF} &deg;F and {weatherType}.</h2>
-          <Link to="/foo">View Extended Forecast</Link>
+          <h2 className="current-weather-headline">The current weather in {location} is {tempF} &deg;F with {weatherType.toLowerCase()}.</h2>
+          <Link className="extended-forecast-link" to="/foo">View Extended Forecast</Link>
         </div>)
     } else {
       data = ''
