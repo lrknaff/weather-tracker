@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 
 const Card = ({ state, id }) => {
-  console.log('id', id)
-  console.log('state', state)
   return (
     <div>
       <p>{ state.getCurrentWeatherByZip[id] ? state.getCurrentWeatherByZip[id].location : null}</p>

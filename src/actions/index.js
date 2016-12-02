@@ -47,7 +47,6 @@ export const fetchForecast = (position) => {
   }
 }
 export const fetchForecastByZip = (zip) => {
-  console.log('zip', zip)
   return (dispatch) => {
     return axios.get(`
     http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&${API_KEY}
