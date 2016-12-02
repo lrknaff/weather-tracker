@@ -18,6 +18,15 @@ export const receiveForecast = (json) => {
   }
 }
 
+export const receiveExtendedForecast = (json) => {
+  return {
+    type: 'RECEIVE_EXTENDED',
+    location: json.city.name,
+    hourly: json.list,
+
+  }
+}
+
 export const updateLocation = (position) => {
   return (dispatch) => {
     return dispatch(receiveLocation(position))
@@ -44,5 +53,14 @@ export const fetchForecastByZip = (zip) => {
         dispatch(receiveForecast(json))
       })
       .catch(error => console.error('Error with api call...', error.message))
+  }
+}
+
+export const fetchExtendedForecast = (city) => {
+  return (dispatch) => {
+    return axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city},us&mode=json&&APPID=7b05601290f3c029e2162277fc5b288d`)
+      .then(json => {
+        dispatch(receiveExtendedForecast(json))
+      })
   }
 }
