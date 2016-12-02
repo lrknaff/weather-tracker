@@ -9,6 +9,7 @@ const Settings = ({ fetchForecastByZip }) => {
         onClick={(e) => {
           e.preventDefault()
           fetchForecastByZip(input.value)
+          input.value = ''
         }}
       >Submit</button>
     </div>
