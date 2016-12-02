@@ -16,14 +16,11 @@ class Header extends Component {
       location = fakeLocation
       temp = fakeTemp
       weatherType = fakeWeatherType
-      // return <div className="test-class">The page renders!</div>
     } else {
-      // const realWeather = state.getCurrentWeather
       location = state.getCurrentWeather.location
       temp = state.getCurrentWeather.temp
       weatherType = state.getCurrentWeather.weatherType
     }
-    // const { location, temp, weatherType } = this.props.state.getCurrentWeather
     let data
     let loading
     if (this.props.test || state.getCurrentWeather.temp) {
