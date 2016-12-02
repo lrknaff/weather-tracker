@@ -6,7 +6,7 @@ import Header from '../../src/components/Header'
 
 describe('Header', () => {
   it('should render without crashing', () => {
-    const wrapper = shallow(<Header />)
-    expect(wrapper.contains(<div></div>).toEqual(true))
+    const wrapper = shallow(<Header test={true}/>)
+    expect(wrapper.find('.test-class').text()).toEqual('The page renders!')
   });
 });
