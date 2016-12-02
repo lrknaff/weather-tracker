@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+const API_KEY = 'APPID=7b05601290f3c029e2162277fc5b288d'
+
 export const receiveLocation = (position) => {
   return {
     type: 'RECEIVE_LOCATION',
@@ -36,7 +38,7 @@ export const updateLocation = (position) => {
 export const fetchForecast = (position) => {
   return (dispatch) => {
     return axios.get(`
-      http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&APPID=7b05601290f3c029e2162277fc5b288d
+      http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&${API_KEY}
     `)
       .then(json => {
         dispatch(receiveForecast(json))
@@ -48,7 +50,7 @@ export const fetchForecastByZip = (zip) => {
   console.log('zip', zip)
   return (dispatch) => {
     return axios.get(`
-    http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&APPID=7b05601290f3c029e2162277fc5b288d
+    http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&${API_KEY}
     `)
       .then(json => {
         dispatch(receiveForecastByZip(json))
