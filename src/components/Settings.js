@@ -1,13 +1,24 @@
 import React, { Component } from 'react'
 
-const Settings = () => {
-  return (
-    <div>
-      <input type="number" ref="zip" />
-      <button onClick={() => this.props.fetchForecastByZip(this.refs.zip.value)}>Submit</button>
-    </div>
+class Settings extends Component {
+  render() {
+    let input
+    return (
+      <div>
+        <input type="number" value={input} ref={(node) => { input = node }} />
+        <button
+          onClick={(e) => {
+            e.preventDefault()
+            this.props.fetchForecastByZip(input.value)
+          }}
+        >Submit</button>
+      </div>
+    )
+  }
+}
 
-  )
+Settings.propTypes = {
+  fetchForecastByZip: React.PropTypes.func.isRequired,
 }
 
 export default Settings

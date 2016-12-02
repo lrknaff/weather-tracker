@@ -18,6 +18,15 @@ export const receiveForecast = (json) => {
   }
 }
 
+export const receiveForecastByZip = (json) => {
+  return {
+    type: 'RECEIVE_FORECAST_ZIP',
+    location: json.data.name,
+    temp: json.data.main.temp,
+    weatherType: json.data.weather[0].main,
+  }
+}
+
 export const updateLocation = (position) => {
   return (dispatch) => {
     return dispatch(receiveLocation(position))
@@ -36,12 +45,13 @@ export const fetchForecast = (position) => {
   }
 }
 export const fetchForecastByZip = (zip) => {
+  console.log('zip', zip)
   return (dispatch) => {
     return axios.get(`
     http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&APPID=7b05601290f3c029e2162277fc5b288d
     `)
       .then(json => {
-        dispatch(receiveForecast(json))
+        dispatch(receiveForecastByZip(json))
       })
       .catch(error => console.error('Error with api call...', error.message))
   }
