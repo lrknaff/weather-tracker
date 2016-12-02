@@ -13,7 +13,7 @@ class Header extends Component {
       const tempF = Math.floor(convertKelvinToFahrenheit(temp))
       data = (
         <div>
-          <p>The current weather in {location} is {tempF} &deg;F and {weatherType}.</p>
+          <h2>The current weather in {location} is {tempF} &deg;F and {weatherType}.</h2>
           <Link to="/foo">View Extended Forecast</Link>
         </div>)
     } else {
