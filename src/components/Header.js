@@ -6,25 +6,27 @@ import Loader from './loader'
 class Header extends Component {
 
   render() {
+    const { state, test, fakeLocation, fakeTemp, fakeWeatherType } = this.props
+
     let location
     let temp
     let weatherType
 
-    if (this.props.test) {
-      location = 'Denver'
-      temp = '30'
-      weatherType = 'Freakin Cold!'
+    if (test) {
+      location = fakeLocation
+      temp = fakeTemp
+      weatherType = fakeWeatherType
       // return <div className="test-class">The page renders!</div>
     } else {
-      const realWeather = this.props.state.getCurrentWeather
-      location = realWeather.location
-      temp = realWeather.temp
-      weatherType = realWeather.weatherType
+      // const realWeather = state.getCurrentWeather
+      location = state.getCurrentWeather.location
+      temp = state.getCurrentWeather.temp
+      weatherType = state.getCurrentWeather.weatherType
     }
     // const { location, temp, weatherType } = this.props.state.getCurrentWeather
     let data
     let loading
-    if (this.props.test || this.props.state.getCurrentWeather.temp) {
+    if (this.props.test || state.getCurrentWeather.temp) {
       const tempF = Math.floor(convertKelvinToFahrenheit(temp))
       data = (
         <div>
