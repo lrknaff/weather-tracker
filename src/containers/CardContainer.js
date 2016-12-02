@@ -7,15 +7,4 @@ const mapStateToProps = (state) => ({
   state,
 })
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     prompt: () => {
-//       dispatch(promptUser())
-//     },
-//     receiveLocation: () => {
-//       dispatch(receiveLocation())
-//     },
-//   }
-// }
-
 export default connect(mapStateToProps)(Card)

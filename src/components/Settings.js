@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 
 const Settings = ({ fetchForecastByZip, state }) => {
   let input
@@ -7,8 +8,14 @@ const Settings = ({ fetchForecastByZip, state }) => {
                  null
   return (
     <div>
+      <h1>My Cities</h1>
       {cities}
-      <input type="number" value={input} ref={(node) => { input = node }} />
+      <input
+        type="number"
+        placeholder="Enter a zip code"
+        value={input}
+        ref={(node) => { input = node }}
+      />
       <button
         onClick={(e) => {
           e.preventDefault()
@@ -16,6 +23,7 @@ const Settings = ({ fetchForecastByZip, state }) => {
           input.value = ''
         }}
       >Submit</button>
+      <p><Link to="/">Back to Home</Link></p>
     </div>
   )
 }
