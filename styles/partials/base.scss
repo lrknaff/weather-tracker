@@ -1,0 +1,10 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  font-family: $main-font;
+  background: linear-gradient(to bottom, #819BFF, #A684FF, #7C5AD2);
+  height: 100vh;
+}
