@@ -9,8 +9,6 @@
   width: 25vw;
   margin: 30px 15px 30px 15px;
   vertical-align: top;
-
-
 }
 
 .card-main-info{
@@ -41,4 +39,35 @@
 
 .is-hidden {
   display: none;
+}
+
+.link-wrapper {
+  width: 100px;
+  height: 100px;
+}
+
+.add-city-link {
+  background: url(../images/plus.svg) no-repeat;
+  height: 30px;
+
+  .plus-horiz {
+    width: 50px;
+    height: 10px;
+    background-color: #484848;
+    margin-top: 20px;
+    position: absolute;
+  }
+
+  .plus-vert {
+    width: 10px;
+    height: 50px;
+    background-color: #484848;
+    position: absolute;
+    margin-left: 20px;
+  }
+
+  p {
+    color: white;
+  }
+
 }
