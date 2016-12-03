@@ -5,8 +5,8 @@ $debug-background-color: magenta;
 
 @if ($debug) {
 
-  html {
-  color: red;
+  .header-container {
+  border: $debug-border-style;
   }
 
   .todo-list {
