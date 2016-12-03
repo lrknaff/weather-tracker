@@ -7,7 +7,7 @@ import CardContainer from '../containers/CardContainer'
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="dashboard">
       <CardContainer id={0} />
       <CardContainer id={1} />
       <CardContainer id={2} />

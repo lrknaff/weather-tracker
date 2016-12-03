@@ -5,23 +5,14 @@ import convertKelvinToFahrenheit from './helpers/temp-conversion'
 const Card = ({ state, id }) => {
   console.log(id)
   let newId
-  if (id === 0) {
+  if (id === 0 && state.getCurrentWeatherByZip[id]) {
     newId = 'a'
   } else if (id === 1) {
     newId = 'b'
   } else if (id === 2) {
     newId = 'c'
   }
-  // let backgroundColor
-  // let colorOne
-  // let colorTwo
-  // if (id === 0) {
-  //   backgroundColor = 'linear-gradient(to bottom, #7B5ECF, #869BFC);'
-  // } else if (id === 1) {
-  //   backgroundColor = 'blue'
-  // } else if (id === 2) {
-  //   backgroundColor = 'magenta'
-  // }
+
   return (
     <div className="card-container">
       <div className="card-main-info" id={newId}>
