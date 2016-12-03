@@ -7,7 +7,7 @@ const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)
 
 describe('fetchForecast action', () => {
-  it('placeholder test', () => {
+  it('placeholder test - figure out api call', () => {
     expect(true).toEqual(true)
   })
 })

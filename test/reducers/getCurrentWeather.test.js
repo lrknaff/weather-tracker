@@ -1,7 +1,6 @@
-/*eslint-disable*/
 import getCurrentWeather from '../../src/reducers/getCurrentWeather'
 
-describe('setLocation reducer', () => {
+describe('getCurrentWeather reducer', () => {
   it('should return the initial state', () => {
     expect(getCurrentWeather(undefined, {})).toEqual({})
   })
