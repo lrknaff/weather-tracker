@@ -1,10 +1,47 @@
 .card-container {
   display: inline-block;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 20px;
+  font-weight:100;
+  height: 50vh;
+  width: 25vw;
+  margin: 30px 15px 30px 15px;
+
+
 }
 
-// .card-main-info{
-//   background-color: blue;
-// }
+.card-main-info{
+ color: white;
+ height: 50%;
+ padding-top: 10px;
+ padding-bottom: 10px;
+ // background: linear-gradient(to bottom, #7B5ECF, #869BFC);
+}
 
+#a {
+  background: linear-gradient(to bottom, #7B5ECF, #869BFC);
+
+}
+
+#b {
+  background: linear-gradient(to bottom, #3D7DD2, #24CDF9 )
+
+}
+
+#c {
+  background: linear-gradient(to bottom, #FC595C, #F85A89 )
+}
+
+
+  // color: #7B5ECF;
+  //
+  //
+  //
+  // color: #3D7DD2;
+  //
+  //
+  // color: #FC595C;
 
 //if id =1 it should be red, if ....
