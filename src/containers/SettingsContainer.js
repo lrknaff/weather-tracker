@@ -9,8 +9,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleApiCall: () => {
-      dispatch(fetchForecastByZip())
+    fetchForecastByZip: (input) => {
+      dispatch(fetchForecastByZip(input))
     },
   }
 }

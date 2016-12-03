@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
-const Card = () => {
+const Card = ({ state, id }) => {
   return (
     <div>
-      <h1> <Link to="/settings" >Add a pinned city.</Link></h1>
+      <p>{ state.getCurrentWeatherByZip[id] ? state.getCurrentWeatherByZip[id].location : null}</p>
+      <p>{ state.getCurrentWeatherByZip[id] ? state.getCurrentWeatherByZip[id].temp : null}</p>
+      <p>{ state.getCurrentWeatherByZip[id] ? null : <Link to="/settings" >Add a pinned city.</Link> }</p>
     </div>
-
   )
 }
 
