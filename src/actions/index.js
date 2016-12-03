@@ -30,10 +30,11 @@ export const receiveForecastByZip = (json) => {
 }
 
 export const receiveFiveDayForecast = (json) => {
-  console.log(json.data.city.name)
+  console.log(json.data)
   return {
     type: 'RECEIVE_FIVEDAY_FORECAST',
     forecast: json.data.city.name,
+
   }
 }
 
