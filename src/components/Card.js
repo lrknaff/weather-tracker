@@ -2,19 +2,19 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import convertKelvinToFahrenheit from './helpers/temp-conversion'
 
-const Card = ({ state, id }) => {
-  console.log(id)
+const Card = ({ state, id, ifHidden }) => {
+  // console.log(hidden)
   let newId
   if (id === 0 && state.getCurrentWeatherByZip[id]) {
     newId = 'a'
-  } else if (id === 1) {
+  } else if (id === 1 && state.getCurrentWeatherByZip[id]) {
     newId = 'b'
-  } else if (id === 2) {
+  } else if (id === 2 && state.getCurrentWeatherByZip[id]) {
     newId = 'c'
   }
 
   return (
-    <div className="card-container">
+    <div className={ifHidden}>
       <div className="card-main-info" id={newId}>
         <h3>{ state.getCurrentWeatherByZip[id] ? state.getCurrentWeatherByZip[id].location : null}</h3>
         <h2>{ state.getCurrentWeatherByZip[id] ? Math.floor(convertKelvinToFahrenheit(state.getCurrentWeatherByZip[id].temp)) : null}</h2>
