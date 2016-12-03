@@ -21,7 +21,7 @@ const Card = ({ state, id, ifHidden }) => {
         <h4>{ state.getCurrentWeatherByZip[id] ? `and ${state.getCurrentWeatherByZip[id].weatherType.toLowerCase()}` : null}</h4>
       </div>
       <div className="card-extended-info">
-        <p>{ state.getCurrentWeatherByZip[id] ? null : <Link to="/settings" >Add a pinned city.</Link> }</p>
+        <p>{ state.getCurrentWeatherByZip[id] ? null : <Link to="/settings" ><img src="../../images/plus.svg" alt="Plus icon." /></Link> }</p>
       </div>
     </div>
   )

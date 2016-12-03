@@ -8,7 +8,7 @@ const Dashboard = ({ state }) => {
   // console.log(state)
   let ifHidden
   if (!state.getCurrentWeather.location) {
-    ifHidden = 'isHidden'
+    ifHidden = 'is-hidden'
   } else {
     ifHidden = 'card-container'
   }
