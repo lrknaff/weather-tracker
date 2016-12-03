@@ -3,7 +3,6 @@ import { Link } from 'react-router'
 import convertKelvinToFahrenheit from './helpers/temp-conversion'
 
 const Card = ({ state, id }) => {
-  console.log(state)
   return (
     <div>
       <h3>{ state.getCurrentWeatherByZip[id] ? state.getCurrentWeatherByZip[id].location : null}</h3>

@@ -34,7 +34,9 @@ export const receiveFiveDayForecast = (json) => {
   return {
     type: 'RECEIVE_FIVEDAY_FORECAST',
     forecast: json.data.city.name,
-
+    data: [
+      {},
+    ],
   }
 }
 
