@@ -31,29 +31,9 @@ export const receiveForecastByZip = (json) => {
 
 
 export const receiveFiveDayForecast = (json) => {
-  // const date = json.data.list[0].dt_txt.split(' ')[0]
-  const newArray = json.data.list.map((day) => {
-    day.dt_txt = day.dt_txt.split(' ')[0]
-    return newArray
-  })
-  console.log(json.data.list)
-
-  const index = json.data.list.map((day, i) => {
-    if (day.dt_txt !== day[0].dt_txt) {
-      console.log(i)
-      return i
-    }
-    return index
-  })
-
   return {
     type: 'RECEIVE_FIVEDAY_FORECAST',
-    forecast: json.data.city.name,
-    data: [
-      {
-
-      },
-    ],
+    data: json.data.list,
   }
 }
 
