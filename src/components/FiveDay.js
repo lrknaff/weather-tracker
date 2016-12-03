@@ -22,21 +22,27 @@ class FiveDay extends Component {
     const { state } = this.props
 
     const days = state.getFiveDayForecast[0].forecast.map((d) => {
-      return d.dt_txt.split(' ')[0].split('-')
-    })
-    console.log(days[0])
+      d.dt_txt = d.dt_txt.split(' ')[0].split('-')
+      d.dt_txt = new Date(parseInt(d.dt_txt[0], 10), parseInt(d.dt_txt[1] - 1, 10), parseInt(d.dt_txt[2], 10))
 
-    const date = new Date(parseInt(days[0][0], 10), parseInt(days[0][1] - 1, 10), parseInt(days[0][2], 10))
-    console.log(date)
-    console.log(date.getDay())
+      const dayNumber = d.dt_txt.getDay()
+      return daysMap[dayNumber]
+    })
+    const noDuplicates = [...new Set(days)]
+    return noDuplicates
   }
 
   render() {
-    console.log(this.props.state)
+    const displayDays = this.getDays()
+    const days = displayDays.map((day, i) => {
+      return (
+        <li key={i}>{day}</li>
+      )
+    })
     return (
       <div>
         <ul>
-          <li>day</li>
+          {days}
         </ul>
         <ul>
           <li>temp</li>
