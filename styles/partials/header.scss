@@ -3,9 +3,21 @@ header {
   box-shadow: 0 0 15px 0 gray;
   height: 20vh;
 
-  .header-text-main {
-    color: black;
-    font-size: 34px;
+  .extended-forecast-link {
+    padding: 20px 20px;
+    text-decoration: none;
+  }
+
+  .header-text-location {
+    color: #7B5ECF;
+  }
+
+  .header-text-temp {
+    color: #3D7DD2;
+  }
+
+  .header-text-weather-type {
+    color: #FC595C;
   }
 
 }
