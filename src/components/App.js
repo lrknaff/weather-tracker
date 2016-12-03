@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
 import HeaderContainer from '../containers/HeaderContainer'
+import CardContainer from '../containers/CardContainer'
+import Dashboard from '../components/Dashboard'
 import { fetchForecast, updateLocation } from '../actions/index'
 
 class App extends Component {
@@ -16,7 +18,10 @@ class App extends Component {
 
   render() {
     return (
-      <HeaderContainer />
+      <div>
+        <HeaderContainer />
+        <Dashboard />
+      </div>
     )
   }
 }

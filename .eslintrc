@@ -26,6 +26,7 @@
     "arrow-parens": "off",
     "arrow-body-style": "off",
     "no-underscore-dangle": "off",
-    'no-debugger': 'off'
+    'no-debugger': 'off',
+    "react/no-unused-prop-types": "off"
   }
 }
