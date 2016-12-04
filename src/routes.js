@@ -14,7 +14,7 @@ const Routes = (props) => (
     <Route path="/" component={AppContainer}>
       <IndexRoute component={DashboardContainer} />
       <Route path="/settings" component={SettingsContainer} />
-      <Route path="/extended/:id" component={ExtendedContainer} />
+      <Route path="/extended/:name/:id" component={ExtendedContainer} />
     </Route>
   </Router>
 )

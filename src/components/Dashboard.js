@@ -6,7 +6,6 @@ import CardContainer from '../containers/CardContainer'
 import FooterContainer from '../containers/FooterContainer'
 
 const Dashboard = ({ state }) => {
-  // console.log(state)
   let ifHidden
   if (!state.getCurrentWeather.location) {
     ifHidden = 'is-hidden'
