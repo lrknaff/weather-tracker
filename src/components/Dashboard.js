@@ -18,7 +18,7 @@ const Dashboard = ({ state }) => {
       <CardContainer id={0} ifHidden={ifHidden} />
       <CardContainer id={1} ifHidden={ifHidden} />
       <CardContainer id={2} ifHidden={ifHidden} />
-      <p><Link to="/settings">Edit Cities</Link></p>
+      <p className="edit-cities-link"><Link to="/settings">Edit Cities &raquo;</Link></p>
     </div>
   )
 }
