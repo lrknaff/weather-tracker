@@ -7,7 +7,6 @@ const Settings = ({ fetchForecastByZip, state }) => {
                  state.getCurrentWeatherByZip.map((city, i) => <div key={i}>{city.location}</div>) :
                  null
 
-  console.log('state', state)
   return (
     <div>
       <h1>My Cities</h1>

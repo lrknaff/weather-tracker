@@ -35,28 +35,73 @@ export const modifyFiveDay = (json) => {
   const today = `${todaysDate[2]}-${todaysDate[0]}-${todaysDate[1]}`
 
   json.data.list.forEach((day) => {
+    day.dt_txt = day.dt_txt.split(' ')[0]
     day.dt = new Date((day.dt * 1000) + 25200000)
     day.dt = day.dt.getHours()
+
     if (day.dt >= 12) {
       day.dt = `${day.dt -= 12} PM`
     } else {
       day.dt = `${day.dt} AM`
     }
   })
-  console.log('modified json', json)
+
   const notToday = json.data.list.filter((day) => {
     return day.dt_txt !== today
   })
 
-  console.log(notToday)
+  console.log('modified json', json)
+  console.log('nottoday', notToday)
+
+  const data = notToday.map((day) => {
+    return {
+      high: day.main.temp_max,
+    }
+  })
+
+
   return {
-    word: 'hello',
+    dayOne: notToday.slice(0, 8).map((hour) => {
+      return {
+        time: hour.dt,
+        day: hour.dt_txt,
+        temp: hour.main.temp,
+        main: hour.weather[0].main,
+        description: hour.weather[0].description,
+      }
+    }),
+    dayTwo: notToday.slice(8, 16).map((hour) => {
+      return {
+        time: hour.dt,
+        day: hour.dt_txt,
+        temp: hour.main.temp,
+        main: hour.weather[0].main,
+        description: hour.weather[0].description,
+      }
+    }),
+    dayThree: notToday.slice(16, 24).map((hour) => {
+      return {
+        time: hour.dt,
+        day: hour.dt_txt,
+        temp: hour.main.temp,
+        main: hour.weather[0].main,
+        description: hour.weather[0].description,
+      }
+    }),
+    dayFour: notToday.slice(24, 32).map((hour) => {
+      return {
+        time: hour.dt,
+        day: hour.dt_txt,
+        temp: hour.main.temp,
+        main: hour.weather[0].main,
+        description: hour.weather[0].description,
+      }
+    }),
   }
 }
 
 
 export const receiveFiveDayForecast = (json) => {
-  console.log('the real original json', json)
   return {
     type: 'RECEIVE_FIVEDAY_FORECAST',
     data: modifyFiveDay(json),
