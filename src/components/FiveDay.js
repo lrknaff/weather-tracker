@@ -13,36 +13,11 @@ const daysMap = {
 }
 
 class FiveDay extends Component {
-
-  componentDidMount() {
-    this.getDays()
-  }
-
-  getDays() {
-    const { state } = this.props
-
-    const days = state.getFiveDayForecast[0].forecast.map((d) => {
-      d.dt_txt = d.dt_txt.split(' ')[0].split('-')
-      d.dt_txt = new Date(parseInt(d.dt_txt[0], 10), parseInt(d.dt_txt[1] - 1, 10), parseInt(d.dt_txt[2], 10))
-
-      const dayNumber = d.dt_txt.getDay()
-      return daysMap[dayNumber]
-    })
-    const noDuplicates = [...new Set(days)]
-    return noDuplicates
-  }
-
   render() {
-    const displayDays = this.getDays()
-    const days = displayDays.map((day, i) => {
-      return (
-        <li key={i}>{day}</li>
-      )
-    })
     return (
       <div>
         <ul>
-          {days}
+          <li>day</li>
         </ul>
         <ul>
           <li>temp</li>
