@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import FiveDay from './FiveDay'
+import Extended from './Extended'
 import convertKelvinToFahrenheit from './helpers/temp-conversion'
 
 

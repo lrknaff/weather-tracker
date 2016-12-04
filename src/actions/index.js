@@ -119,6 +119,7 @@ export const fetchForecast = (position) => {
       .catch(error => console.error('Error with api call...', error.message))
   }
 }
+
 export const fetchFiveDay = (city) => {
   return (dispatch) => {
     return axios.get(`
@@ -130,6 +131,7 @@ export const fetchFiveDay = (city) => {
       .catch(error => console.error('Error with api call...', error.message))
   }
 }
+
 export const fetchForecastByZip = (zip) => {
   return (dispatch) => {
     return axios.get(`

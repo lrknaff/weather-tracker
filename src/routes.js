@@ -6,6 +6,7 @@ import HeaderContainer from './containers/HeaderContainer'
 import Dashboard from './components/Dashboard'
 import CardContainer from './containers/CardContainer'
 import SettingsContainer from './containers/SettingsContainer'
+import ExtendedContainer from './containers/ExtendedContainer'
 
 const Routes = (props) => (
   <Router {...props}>
@@ -14,6 +15,7 @@ const Routes = (props) => (
     <Route path="/" component={Dashboard} />
     <Route path="/settings" component={SettingsContainer} />
     <Route path="/" component={CardContainer} />
+    <Route path="/extended/:id" component={ExtendedContainer} />
   </Router>
 )
 

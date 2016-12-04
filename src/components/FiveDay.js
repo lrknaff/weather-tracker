@@ -13,6 +13,7 @@ class FiveDay extends Component {
   render() {
     let data
     const { state, id } = this.props
+    console.log('params', this.props.params)
 
     if (state.getFiveDayForecast[id]) {
       const one = []
@@ -44,6 +45,7 @@ class FiveDay extends Component {
             <li>{Math.max(...three)}&deg; / {Math.min(...three)}&deg;</li>
             <li>{Math.max(...four)}&deg; / {Math.min(...four)}&deg;</li>
           </ul>
+          <button><Link to={`/Extended/${state.getCurrentWeatherByZip[id].location}`}>View Extended Forecast</Link></button>
         </div>
       )
     } else {
