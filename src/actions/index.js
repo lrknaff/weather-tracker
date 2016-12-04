@@ -51,7 +51,7 @@ export const modifyFiveDay = (json) => {
   })
 
   return {
-    dayOne: notToday.slice(0, 8).map((hour) => {
+    a: notToday.slice(0, 8).map((hour) => {
       return {
         time: hour.dt,
         date: hour.dt_txt,
@@ -61,7 +61,7 @@ export const modifyFiveDay = (json) => {
         description: hour.weather[0].description,
       }
     }),
-    dayTwo: notToday.slice(8, 16).map((hour) => {
+    b: notToday.slice(8, 16).map((hour) => {
       return {
         time: hour.dt,
         date: hour.dt_txt,
@@ -71,7 +71,7 @@ export const modifyFiveDay = (json) => {
         description: hour.weather[0].description,
       }
     }),
-    dayThree: notToday.slice(16, 24).map((hour) => {
+    c: notToday.slice(16, 24).map((hour) => {
       return {
         time: hour.dt,
         date: hour.dt_txt,
@@ -81,7 +81,7 @@ export const modifyFiveDay = (json) => {
         description: hour.weather[0].description,
       }
     }),
-    dayFour: notToday.slice(24, 32).map((hour) => {
+    d: notToday.slice(24, 32).map((hour) => {
       return {
         time: hour.dt,
         date: hour.dt_txt,

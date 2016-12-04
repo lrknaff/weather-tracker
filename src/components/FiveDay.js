@@ -20,23 +20,23 @@ class FiveDay extends Component {
       const three = []
       const four = []
 
-      const dayOne = state.getFiveDayForecast[id].forecast.dayOne
-      const dayTwo = state.getFiveDayForecast[id].forecast.dayTwo
-      const dayThree = state.getFiveDayForecast[id].forecast.dayThree
-      const dayFour = state.getFiveDayForecast[id].forecast.dayFour
+      const a = state.getFiveDayForecast[id].forecast.a
+      const b = state.getFiveDayForecast[id].forecast.b
+      const c = state.getFiveDayForecast[id].forecast.c
+      const d = state.getFiveDayForecast[id].forecast.d
 
-      this.getMinAndMax(one, dayOne)
-      this.getMinAndMax(two, dayTwo)
-      this.getMinAndMax(three, dayThree)
-      this.getMinAndMax(four, dayFour)
+      this.getMinAndMax(one, a)
+      this.getMinAndMax(two, b)
+      this.getMinAndMax(three, c)
+      this.getMinAndMax(four, d)
 
       data = (
         <div>
           <ul>
-            <li>{state.getFiveDayForecast[id].forecast.dayOne[id].day}</li>
-            <li>{state.getFiveDayForecast[id].forecast.dayTwo[id].day}</li>
-            <li>{state.getFiveDayForecast[id].forecast.dayThree[id].day}</li>
-            <li>{state.getFiveDayForecast[id].forecast.dayFour[id].day}</li>
+            <li>{state.getFiveDayForecast[id].forecast.a[id].day}</li>
+            <li>{state.getFiveDayForecast[id].forecast.b[id].day}</li>
+            <li>{state.getFiveDayForecast[id].forecast.c[id].day}</li>
+            <li>{state.getFiveDayForecast[id].forecast.d[id].day}</li>
           </ul>
           <ul>
             <li>{Math.max(...one)}&deg; / {Math.min(...one)}&deg;</li>
