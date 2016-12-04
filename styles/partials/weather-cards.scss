@@ -1,0 +1,79 @@
+.card-container {
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 20px;
+  font-weight:100;
+  height: 50vh;
+  width: 25vw;
+  margin: 30px 15px 30px 15px;
+  vertical-align: top;
+}
+
+.card-main-info{
+ color: white;
+ height: 50%;
+ padding-top: 10px;
+ padding-bottom: 10px;
+ // background: linear-gradient(to bottom, #7B5ECF, #869BFC);
+}
+
+.card-extended-info {
+  background-color: white;
+}
+
+#a {
+  background: linear-gradient(to bottom, #7B5ECF, #869BFC);
+
+}
+
+#b {
+  background: linear-gradient(to bottom, #3D7DD2, #24CDF9 )
+
+}
+
+#c {
+  background: linear-gradient(to bottom, #FC595C, #F85A89 )
+}
+
+.is-hidden {
+  display: none;
+}
+
+.link-wrapper {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  position: relative;
+  // left: 160px;
+}
+
+.add-city-link {
+  background: url(../images/plus.svg) no-repeat;
+  height: 30px;
+
+  .plus-horiz {
+    width: 50px;
+    height: 10px;
+    background-color: #484848;
+    margin-top: 20px;
+    /* margin-right: 25px; */
+    left: 0;
+    position: absolute;
+  }
+
+  .plus-vert {
+    width: 10px;
+    height: 50px;
+    background-color: #484848;
+    position: absolute;
+    margin-left: 20px;
+    right: 20px
+  }
+
+  p {
+    color: white;
+  }
+
+}
