@@ -8,8 +8,6 @@ class FiveDay extends Component {
     const temps = day.map((hour) => {
       return arr.push(Math.floor(convertKelvinToFahrenheit(hour.temp)))
     })
-
-    console.log(arr)
   }
 
   render() {
@@ -17,15 +15,15 @@ class FiveDay extends Component {
     const { state, id } = this.props
 
     if (state.getFiveDayForecast[id]) {
-      const dayOne = state.getFiveDayForecast[id].forecast.dayOne
-      const dayTwo = state.getFiveDayForecast[id].forecast.dayTwo
-      const dayThree = state.getFiveDayForecast[id].forecast.dayThree
-      const dayFour = state.getFiveDayForecast[id].forecast.dayFour
-
       const one = []
       const two = []
       const three = []
       const four = []
+
+      const dayOne = state.getFiveDayForecast[id].forecast.dayOne
+      const dayTwo = state.getFiveDayForecast[id].forecast.dayTwo
+      const dayThree = state.getFiveDayForecast[id].forecast.dayThree
+      const dayFour = state.getFiveDayForecast[id].forecast.dayFour
 
       this.getMinAndMax(one, dayOne)
       this.getMinAndMax(two, dayTwo)
@@ -42,6 +40,9 @@ class FiveDay extends Component {
           </ul>
           <ul>
             <li>{Math.max(...one)}&deg; / {Math.min(...one)}&deg;</li>
+            <li>{Math.max(...two)}&deg; / {Math.min(...two)}&deg;</li>
+            <li>{Math.max(...three)}&deg; / {Math.min(...three)}&deg;</li>
+            <li>{Math.max(...four)}&deg; / {Math.min(...four)}&deg;</li>
           </ul>
         </div>
       )
