@@ -1,4 +1,5 @@
 import axios from 'axios'
+import moment from 'moment'
 
 const API_KEY = 'APPID=7b05601290f3c029e2162277fc5b288d'
 
@@ -29,12 +30,24 @@ export const receiveForecastByZip = (json) => {
   }
 }
 
-
-export const receiveFiveDayForecast = (json) => {
+export const modifyFiveDay = (json) => {
+  const todaysDate = moment().format('MM-DD-YYYY').toString().split('-')
+  const today = `${todaysDate[2]}-${todaysDate[0]}-${todaysDate[1]}`
+  const splitDates = json.data.list.forEach((day) => {
+    day.dt_txt = day.dt_txt.split(' ')[0]
+  })
+  console.log(splitDates)
   console.log(json)
   return {
+    word: 'hello',
+  }
+}
+
+
+export const receiveFiveDayForecast = (json) => {
+  return {
     type: 'RECEIVE_FIVEDAY_FORECAST',
-    data: json.data.list,
+    data: modifyFiveDay(json),
   }
 }
 
