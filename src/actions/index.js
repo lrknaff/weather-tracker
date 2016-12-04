@@ -33,12 +33,17 @@ export const receiveForecastByZip = (json) => {
 export const modifyFiveDay = (json) => {
   const todaysDate = moment().format('MM-DD-YYYY').toString().split('-')
   const today = `${todaysDate[2]}-${todaysDate[0]}-${todaysDate[1]}`
+
   json.data.list.forEach((day) => {
-    day.dt_txt = day.dt_txt.split(' ')[0]
+    day.dt = new Date((day.dt * 1000) + 25200000)
+    day.dt = day.dt.getHours()
+    if (day.dt >= 12) {
+      day.dt = `${day.dt -= 12} PM`
+    } else {
+      day.dt = `${day.dt} AM`
+    }
   })
-
-  console.log('json', json)
-
+  console.log('modified json', json)
   const notToday = json.data.list.filter((day) => {
     return day.dt_txt !== today
   })
@@ -51,6 +56,7 @@ export const modifyFiveDay = (json) => {
 
 
 export const receiveFiveDayForecast = (json) => {
+  console.log('the real original json', json)
   return {
     type: 'RECEIVE_FIVEDAY_FORECAST',
     data: modifyFiveDay(json),
