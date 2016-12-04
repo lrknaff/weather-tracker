@@ -31,6 +31,7 @@ export const receiveForecastByZip = (json) => {
 
 
 export const receiveFiveDayForecast = (json) => {
+  console.log(json)
   return {
     type: 'RECEIVE_FIVEDAY_FORECAST',
     data: json.data.list,
