@@ -28,6 +28,7 @@
     "arrow-body-style": "off",
     "no-underscore-dangle": "off",
     'no-debugger': 'off',
+    "no-unneeded-ternary": "off",
     "react/no-unused-prop-types": "off"
   }
 }

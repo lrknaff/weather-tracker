@@ -40,6 +40,7 @@
     "jest": "15.1.1",
     "json-loader": "0.5.4",
     "locus": "^1.2.0",
+    "moment": "^2.17.1",
     "nock": "^9.0.2",
     "node-sass": "^3.10.0",
     "object-assign": "4.1.0",

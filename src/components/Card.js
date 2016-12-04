@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import FiveDay from './FiveDay'
+import Extended from './Extended'
 import convertKelvinToFahrenheit from './helpers/temp-conversion'
 
+
 const Card = ({ state, id, ifHidden }) => {
-  // console.log(hidden)
   let newId
   if (id === 0 && state.getCurrentWeatherByZip[id]) {
     newId = 'a'
@@ -23,6 +25,7 @@ const Card = ({ state, id, ifHidden }) => {
       <div className="card-extended-info">
         <p>{ state.getCurrentWeatherByZip[id] ? null : <Link className="add-city-link" to="/settings" aria-label="Add City"><div className="link-wrapper"><span className="plus-horiz" /><span className="plus-vert" /></div><p>Add City</p></Link> }</p>
       </div>
+      <FiveDay state={state} id={id} />
     </div>
   )
 }

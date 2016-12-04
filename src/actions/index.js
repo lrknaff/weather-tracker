@@ -1,4 +1,5 @@
 import axios from 'axios'
+import moment from 'moment'
 
 const API_KEY = 'APPID=7b05601290f3c029e2162277fc5b288d'
 
@@ -29,12 +30,75 @@ export const receiveForecastByZip = (json) => {
   }
 }
 
+export const modifyFiveDay = (json) => {
+  const todaysDate = moment().format('MM-DD-YYYY').toString().split('-')
+  const today = `${todaysDate[2]}-${todaysDate[0]}-${todaysDate[1]}`
+
+  json.data.list.forEach((day) => {
+    day.dt_txt = day.dt_txt.split(' ')[0]
+    day.dt = new Date((day.dt * 1000) + 25200000)
+    day.dt = day.dt.getHours()
+
+    if (day.dt >= 12) {
+      day.dt = `${day.dt -= 12} PM`
+    } else {
+      day.dt = `${day.dt} AM`
+    }
+  })
+
+  const notToday = json.data.list.filter((day) => {
+    return day.dt_txt !== today
+  })
+
+  return {
+    a: notToday.slice(0, 8).map((hour) => {
+      return {
+        time: hour.dt,
+        date: hour.dt_txt,
+        day: moment(hour.dt_txt).format('dddd'),
+        temp: hour.main.temp,
+        main: hour.weather[0].main,
+        description: hour.weather[0].description,
+      }
+    }),
+    b: notToday.slice(8, 16).map((hour) => {
+      return {
+        time: hour.dt,
+        date: hour.dt_txt,
+        day: moment(hour.dt_txt).format('dddd'),
+        temp: hour.main.temp,
+        main: hour.weather[0].main,
+        description: hour.weather[0].description,
+      }
+    }),
+    c: notToday.slice(16, 24).map((hour) => {
+      return {
+        time: hour.dt,
+        date: hour.dt_txt,
+        day: moment(hour.dt_txt).format('dddd'),
+        temp: hour.main.temp,
+        main: hour.weather[0].main,
+        description: hour.weather[0].description,
+      }
+    }),
+    d: notToday.slice(24, 32).map((hour) => {
+      return {
+        time: hour.dt,
+        date: hour.dt_txt,
+        day: moment(hour.dt_txt).format('dddd'),
+        temp: hour.main.temp,
+        main: hour.weather[0].main,
+        description: hour.weather[0].description,
+      }
+    }),
+  }
+}
+
+
 export const receiveFiveDayForecast = (json) => {
-  console.log(json.data)
   return {
     type: 'RECEIVE_FIVEDAY_FORECAST',
-    forecast: json.data.city.name,
-
+    data: modifyFiveDay(json),
   }
 }
 
@@ -55,6 +119,7 @@ export const fetchForecast = (position) => {
       .catch(error => console.error('Error with api call...', error.message))
   }
 }
+
 export const fetchFiveDay = (city) => {
   return (dispatch) => {
     return axios.get(`
@@ -66,6 +131,7 @@ export const fetchFiveDay = (city) => {
       .catch(error => console.error('Error with api call...', error.message))
   }
 }
+
 export const fetchForecastByZip = (zip) => {
   return (dispatch) => {
     return axios.get(`

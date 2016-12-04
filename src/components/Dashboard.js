@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import Card from '../components/Card'
 import CardContainer from '../containers/CardContainer'
+import FooterContainer from '../containers/FooterContainer'
 
 const Dashboard = ({ state }) => {
-  // console.log(state)
   let ifHidden
   if (!state.getCurrentWeather.location) {
     ifHidden = 'is-hidden'
@@ -18,7 +18,7 @@ const Dashboard = ({ state }) => {
       <CardContainer id={0} ifHidden={ifHidden} />
       <CardContainer id={1} ifHidden={ifHidden} />
       <CardContainer id={2} ifHidden={ifHidden} />
-      <p><Link to="/settings">Edit Cities</Link></p>
+      <FooterContainer />
     </div>
   )
 }
