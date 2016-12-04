@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div className="master-container">
         <HeaderContainer />
-        <DashboardContainer />
+        {this.props.children}
       </div>
     )
   }
