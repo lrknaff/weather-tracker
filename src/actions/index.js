@@ -50,9 +50,6 @@ export const modifyFiveDay = (json) => {
     return day.dt_txt !== today
   })
 
-  console.log('modified json', json)
-  console.log('nottoday', notToday)
-
   const data = notToday.map((day) => {
     return {
       high: day.main.temp_max,

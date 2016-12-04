@@ -14,14 +14,28 @@ const daysMap = {
 
 class FiveDay extends Component {
   render() {
+    let data
+    const { state, id } = this.props
+
+    if (state.getFiveDayForecast[id]) {
+      data = (
+        <div>
+          <ul>
+            <li>{state.getFiveDayForecast[id].forecast.dayOne[id].main}</li>
+          </ul>
+          <ul>
+            <li>temp</li>
+          </ul>
+        </div>
+      )
+    } else {
+      data = (
+        <h2>Loading...</h2>
+      )
+    }
     return (
       <div>
-        <ul>
-          <li>day</li>
-        </ul>
-        <ul>
-          <li>temp</li>
-        </ul>
+        {data}
       </div>
     )
   }
