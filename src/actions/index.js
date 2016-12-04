@@ -33,11 +33,17 @@ export const receiveForecastByZip = (json) => {
 export const modifyFiveDay = (json) => {
   const todaysDate = moment().format('MM-DD-YYYY').toString().split('-')
   const today = `${todaysDate[2]}-${todaysDate[0]}-${todaysDate[1]}`
-  const splitDates = json.data.list.forEach((day) => {
+  json.data.list.forEach((day) => {
     day.dt_txt = day.dt_txt.split(' ')[0]
   })
-  console.log(splitDates)
-  console.log(json)
+
+  console.log('json', json)
+
+  const notToday = json.data.list.filter((day) => {
+    return day.dt_txt !== today
+  })
+
+  console.log(notToday)
   return {
     word: 'hello',
   }
