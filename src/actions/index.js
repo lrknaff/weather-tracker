@@ -50,18 +50,12 @@ export const modifyFiveDay = (json) => {
     return day.dt_txt !== today
   })
 
-  const data = notToday.map((day) => {
-    return {
-      high: day.main.temp_max,
-    }
-  })
-
-
   return {
     dayOne: notToday.slice(0, 8).map((hour) => {
       return {
         time: hour.dt,
-        day: hour.dt_txt,
+        date: hour.dt_txt,
+        day: moment(hour.dt_txt).format('dddd'),
         temp: hour.main.temp,
         main: hour.weather[0].main,
         description: hour.weather[0].description,
@@ -70,7 +64,8 @@ export const modifyFiveDay = (json) => {
     dayTwo: notToday.slice(8, 16).map((hour) => {
       return {
         time: hour.dt,
-        day: hour.dt_txt,
+        date: hour.dt_txt,
+        day: moment(hour.dt_txt).format('dddd'),
         temp: hour.main.temp,
         main: hour.weather[0].main,
         description: hour.weather[0].description,
@@ -79,7 +74,8 @@ export const modifyFiveDay = (json) => {
     dayThree: notToday.slice(16, 24).map((hour) => {
       return {
         time: hour.dt,
-        day: hour.dt_txt,
+        date: hour.dt_txt,
+        day: moment(hour.dt_txt).format('dddd'),
         temp: hour.main.temp,
         main: hour.weather[0].main,
         description: hour.weather[0].description,
@@ -88,7 +84,8 @@ export const modifyFiveDay = (json) => {
     dayFour: notToday.slice(24, 32).map((hour) => {
       return {
         time: hour.dt,
-        day: hour.dt_txt,
+        date: hour.dt_txt,
+        day: moment(hour.dt_txt).format('dddd'),
         temp: hour.main.temp,
         main: hour.weather[0].main,
         description: hour.weather[0].description,
