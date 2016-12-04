@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import axios from 'axios'
 import HeaderContainer from '../containers/HeaderContainer'
 import CardContainer from '../containers/CardContainer'
-import Dashboard from '../components/Dashboard'
+import DashboardContainer from '../containers/DashboardContainer'
 import { fetchForecast, updateLocation } from '../actions/index'
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div className="master-container">
         <HeaderContainer />
-        <Dashboard />
+        <DashboardContainer />
       </div>
     )
   }
