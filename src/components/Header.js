@@ -4,7 +4,6 @@ import convertKelvinToFahrenheit from './helpers/temp-conversion'
 import Loader from './loader'
 
 class Header extends Component {
-
   render() {
     const { state, test, fakeLocation, fakeTemp, fakeWeatherType } = this.props
 
@@ -21,26 +20,26 @@ class Header extends Component {
       temp = state.getCurrentWeather.temp
       weatherType = state.getCurrentWeather.weatherType
     }
+
     let data
     let loading
     if (this.props.test || state.getCurrentWeather.temp) {
       const tempF = Math.floor(convertKelvinToFahrenheit(temp))
       data = (
-        <div className="header-container">
-          <h2 className="header-text-main">The current weather in <span className="header-text-location">{location}</span><br /> is <span className="header-text-temp">{tempF}&deg;F </span> and <span className="header-text-weather-type">{weatherType.toLowerCase()}</span>.</h2>
-          <Link className="extended-forecast-link" to="/foo">View Extended Forecast &raquo;</Link>
-        </div>)
+        <header>
+          <div className="header-container">
+            <h2 className="header-text-main">The current weather in <span className="header-text-location">{location}</span><br /> is <span className="header-text-temp">{tempF}&deg;F </span> and <span className="header-text-weather-type">{weatherType.toLowerCase()}</span>.</h2>
+            <Link to={`/Extended/${state.getCurrentWeather.location}`}>View Extended Forecast &raquo;</Link>
+          </div>
+        </header>
+      )
     } else {
-      data = ''
-      loading = <Loader />
+      data = <Loader />
     }
 
     return (
       <main>
-        <header>
-          {data}
-        </header>
-        {loading}
+        {data}
       </main>
     )
   }
