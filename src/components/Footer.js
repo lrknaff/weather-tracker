@@ -5,7 +5,7 @@ import Loader from './loader'
 const Footer = ({ state }) => {
   let display
   if (state.getCurrentWeather.temp) {
-    display = <p><Link to="/settings">Edit Cities</Link></p>
+    display = <p><Link to="/settings">Edit Cities &raquo;</Link></p>
   } else {
     display = null
   }
