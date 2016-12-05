@@ -25,6 +25,7 @@ const ThreeHour = ({ state, params }) => {
             <li>{Math.floor(convertKelvinToFahrenheit(hour.temp))}&deg;</li>
             <li>{hour.description}</li>
           </ul>
+          <hr />
         </div>
       )
     })
