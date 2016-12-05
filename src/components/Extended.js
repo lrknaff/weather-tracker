@@ -5,13 +5,12 @@ import convertKelvinToFahrenheit from './helpers/temp-conversion'
 const ThreeHour = ({ state, params }) => {
   let data
   const id = params.id
-  console.log('id', id)
+
   if (id >= 0) {
     data = state.getFiveDayForecast[id].forecast
   } else {
     data = state.setLocation[0].forecast
   }
-  console.log('data in threeHour', data)
 
   const dataArray = Object.keys(data).map((key) => data[key])
 
