@@ -35,8 +35,4 @@ describe('getCurrentWeather reducer', () => {
 
     expect(getCurrentWeather({}, action)).toEqual(expected)
   })
-
-  xit('should remove the correct city when given the REMOVE_PINNED_CITY type', () => {
-    // use the fake store to do the test
-  })
 })
