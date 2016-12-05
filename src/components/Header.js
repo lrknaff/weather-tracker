@@ -29,7 +29,7 @@ class Header extends Component {
         <header>
           <div className="header-container">
             <h2 className="header-text-main">The current weather in <span className="header-text-location">{location}</span><br /> is <span className="header-text-temp">{tempF}&deg;F </span> and <span className="header-text-weather-type">{weatherType.toLowerCase()}</span>.</h2>
-            <Link to={`/Extended/${state.getCurrentWeather.location}`}>View Extended Forecast &raquo;</Link>
+            <Link className="extended-forecast-link" to={`/Extended/${state.getCurrentWeather.location}`}>View Extended Forecast &raquo;</Link>
           </div>
         </header>
       )
