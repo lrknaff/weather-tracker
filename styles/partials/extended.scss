@@ -53,16 +53,11 @@
 
 }
 
-@media screen and (max-width: 400px) {
-  .extended-forecast-each-card {
-    li {
-      .extended-time {
-        text-align: right;
-      }
-
-      .extended-temp {
-        text-align: center;
-      }
-    }
+@media screen and (max-width: 480px) {
+  .extended-forecast-each-card li.extended-time {
+     text-align: right;
+  }
+  .extended-forecast-each-card li.extended-temp {
+     text-align: center;
   }
 }
