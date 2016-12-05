@@ -9,6 +9,12 @@ class Settings extends Component {
     }
   }
 
+  checkSubmit() {
+    if (document.querySelector('.city-input').value === '') {
+      this.setState({ submitDisabled: true })
+    }
+  }
+
   disableInput() {
     this.setState({ submitDisabled: true })
   }
@@ -45,11 +51,13 @@ class Settings extends Component {
         <h1 className="settings-headline">My Cities</h1>
         {cities}
         <input
+          className="city-input"
           type="number"
           placeholder="Enter a zip code"
           value={input}
           ref={(node) => { input = node }}
           onChange={(e) => { this.recordInput(e) }}
+          onBlur={() => { this.checkSubmit() }}
         />
         <button
           onClick={(e) => {
