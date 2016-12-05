@@ -39,7 +39,6 @@ const Card = ({ state, id, ifHidden }) => {
         </Link> }
       </div>
       { state ? <FiveDay state={state} id={id} /> : null }
-      {/* <FiveDay state={state} id={id} /> */}
     </div>
   )
 }
