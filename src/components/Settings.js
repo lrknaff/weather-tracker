@@ -9,6 +9,10 @@ class Settings extends Component {
     }
   }
 
+  disableInput() {
+    this.setState({ submitDisabled: true })
+  }
+
   recordInput(e) {
     if (e.target.value) {
       this.setState({ submitDisabled: false })
@@ -52,6 +56,7 @@ class Settings extends Component {
             e.preventDefault()
             fetchForecastByZip(input.value)
             input.value = ''
+            this.disableInput()
           }}
           className="add-city-button"
           disabled={submitDisabled}
