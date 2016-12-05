@@ -44,7 +44,7 @@ class FiveDay extends Component {
             <li className="five-day-temp">{Math.max(...three)}&deg; / {Math.min(...three)}&deg;</li>
             <li className="five-day-temp">{Math.max(...four)}&deg; / {Math.min(...four)}&deg;</li>
           </ul>
-          <button><Link to={`/Extended/${state.getCurrentWeatherByZip[id].location}/${id}`}>View Extended Forecast</Link></button>
+          <button><Link to={`/Extended/${state.getCurrentWeatherByZip[id].location}/${id}`}>View Extended Forecast &raquo;</Link></button>
         </div>
       )
     } else {

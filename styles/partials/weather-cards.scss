@@ -111,12 +111,12 @@
 
   .five-day-day-ul {
     float: left;
-    padding: 10px 15px;
+    padding: 10px 0 0 15px;
   }
 
   .five-day-temp-ul {
     float: right;
-    padding: 10px 15px;
+    padding: 10px 15px 0 0;
   }
 
   li {
@@ -129,5 +129,14 @@
 
   .five-day-temp {
     text-align: right;
+  }
+
+  button {
+    border-style: none;
+    background: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin-top: 3px;
   }
 }
