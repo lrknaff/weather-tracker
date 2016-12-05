@@ -31,6 +31,9 @@ const ThreeHour = ({ state, params }) => {
   })
   return (
     <div>
+      <Link to="/">
+        Back to Dashboard
+      </Link>
       <h2 className="extended-city-location">{params.name}</h2>
       {displayData}
     </div>
