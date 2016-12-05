@@ -20,12 +20,10 @@
  height: 50%;
  padding-top: 10px;
  padding-bottom: 10px;
- // background: linear-gradient(to bottom, #7B5ECF, #869BFC);
 }
 
 .card-extended-info {
   position: relative;
-  margin-top: -35px;
 }
 
 #a {
@@ -56,7 +54,8 @@
 }
 
 .add-city-link {
-  height: 30px;
+  position: relative;
+  top: -37px;
 
   .plus-horiz {
     width: 35px;
@@ -82,4 +81,13 @@
     padding: 15px;
   }
 
+}
+
+.five-day-wrapper {
+  height: 50%;
+}
+
+.five-day {
+  height: 100%;
+  background: white;
 }

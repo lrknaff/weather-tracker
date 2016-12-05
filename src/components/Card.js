@@ -36,7 +36,8 @@ const Card = ({ state, id, ifHidden }) => {
             <p>Add City</p>
           </Link> }
       </div>
-      <FiveDay state={state} id={id} />
+      { state ? <FiveDay state={state} id={id} /> : null }
+      {/* <FiveDay state={state} id={id} /> */}
     </div>
   )
 }

@@ -31,7 +31,7 @@ class FiveDay extends Component {
       this.getMinAndMax(four, d)
 
       data = (
-        <div>
+        <div className="five-day">
           <ul>
             <li>{state.getFiveDayForecast[id].forecast.a[id].day}</li>
             <li>{state.getFiveDayForecast[id].forecast.b[id].day}</li>
@@ -53,7 +53,7 @@ class FiveDay extends Component {
       )
     }
     return (
-      <div className="five-day">
+      <div className="five-day-wrapper">
         {data}
       </div>
     )
