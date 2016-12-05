@@ -3,7 +3,6 @@ import { Link } from 'react-router'
 import convertKelvinToFahrenheit from './helpers/temp-conversion'
 
 const ThreeHour = ({ state, params }) => {
-  console.log('state', state)
   let data
   const id = params.id
 

@@ -93,7 +93,6 @@ export const receiveCurrentExtendedForecast = (json) => {
 }
 
 export const receiveFiveDayForecast = (json) => {
-  console.log('json', json)
   return {
     type: 'RECEIVE_FIVEDAY_FORECAST',
     data: modifyFiveDay(json),
