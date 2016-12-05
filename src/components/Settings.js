@@ -9,6 +9,12 @@ class Settings extends Component {
     }
   }
 
+  recordInput(e) {
+    if (e.target.value) {
+      this.setState({ submitDisabled: false })
+    }
+  }
+
   render() {
     const { state, removePinnedCity, fetchForecastByZip } = this.props
     const { submitDisabled } = this.state
@@ -39,6 +45,7 @@ class Settings extends Component {
           placeholder="Enter a zip code"
           value={input}
           ref={(node) => { input = node }}
+          onChange={(e) => { this.recordInput(e) }}
         />
         <button
           onClick={(e) => {
