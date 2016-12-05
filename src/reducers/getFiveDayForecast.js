@@ -4,7 +4,8 @@ const getFiveDayForecast = (state = [], action) => {
       return [...state, { forecast: action.data }]
     case 'REMOVE_PINNED_CITY':
       return [
-        ...state,
+        ...state.slice(0, action.index),
+        ...state.slice(action.index + 1),
       ]
     default:
       return state

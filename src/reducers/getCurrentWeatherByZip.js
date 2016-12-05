@@ -4,8 +4,8 @@ const getCurrentWeatherByZip = (state = [], action) => {
       return [...state, { location: action.location, temp: action.temp, weatherType: action.weatherType }]
     case 'REMOVE_PINNED_CITY':
       return [
-        ...state.slice(0, action.id),
-        ...state.slice(action.id + 1),
+        ...state.slice(0, action.index),
+        ...state.slice(action.index + 1),
       ]
     default:
       return state

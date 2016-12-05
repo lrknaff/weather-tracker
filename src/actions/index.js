@@ -148,9 +148,9 @@ export const fetchForecastByZip = (zip) => {
   }
 }
 
-export const removePinnedCity = (id) => {
+export const removePinnedCity = (index) => {
   return {
     type: 'REMOVE_PINNED_CITY',
-    id,
+    index,
   }
 }
