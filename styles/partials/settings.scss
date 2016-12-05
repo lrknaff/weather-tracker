@@ -1,3 +1,23 @@
 .location {
   display: inline-block;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.settings-headline {
+  font-size: 34px;
+  margin: 20px auto;
+  margin-bottom: 30px;
+}
+
+.settings-container {
+  text-align: center;
+}
+
+.remove-button {
+  border: none;
+  background: none;
+  color: rgb(232, 58, 28);
+  cursor: pointer;
+  font-size: 20px;
 }

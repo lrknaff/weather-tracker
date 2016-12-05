@@ -20,8 +20,8 @@ const Settings = ({ fetchForecastByZip, state, removePinnedCity }) => {
                  null
 
   return (
-    <div>
-      <h1>My Cities</h1>
+    <div className="settings-container">
+      <h1 className="settings-headline">My Cities</h1>
       {cities}
       <input
         type="number"
