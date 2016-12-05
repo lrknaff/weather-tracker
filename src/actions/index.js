@@ -147,3 +147,10 @@ export const fetchForecastByZip = (zip) => {
       .catch(error => console.error('Error with api call...', error.message))
   }
 }
+
+export const removePinnedCity = (index) => {
+  return {
+    type: 'REMOVE_PINNED_CITY',
+    index,
+  }
+}
