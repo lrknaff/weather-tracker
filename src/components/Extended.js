@@ -18,20 +18,28 @@ const ThreeHour = ({ state, params }) => {
   const displayData = dataArray.map((day) => {
     return day.map((hour, i) => {
       return (
-        <div key={i}>
+        <div key={i} className="extended-forecast-each-card" id={i}>
           <ul>
             <li>{hour.day}</li>
             <li>{hour.time}</li>
             <li>{Math.floor(convertKelvinToFahrenheit(hour.temp))}&deg;</li>
             <li>{hour.description}</li>
           </ul>
+          <hr />
+          {/* <br /><br /><br /> */}
         </div>
       )
     })
   })
   return (
-    <div>
-      {displayData}
+    <div className="extended-container">
+      <Link className="back-to-dashboard-link" to="/">
+        Back to Dashboard &raquo;
+      </Link>
+      <h2 className="extended-city-location">{params.name}</h2>
+      <div className="display-data-container">
+        {displayData}
+      </div>
     </div>
   )
 }
