@@ -12,6 +12,7 @@ class FiveDay extends Component {
 
   render() {
     let data
+    let displayD
     const { state, id } = this.props
 
     if (state.getFiveDayForecast[id]) {
@@ -30,19 +31,25 @@ class FiveDay extends Component {
       this.getMinAndMax(three, c)
       this.getMinAndMax(four, d)
 
+      if (state.getFiveDayForecast[id].forecast.d[id]) {
+        displayD = <li className="five-day-temp">{Math.max(...four)}&deg; / {Math.min(...four)}&deg;</li>
+      } else {
+        displayD = <li className="five-day-temp" />
+      }
+
       data = (
         <div className="five-day">
           <ul className="five-day-day-ul">
             <li className="five-day-day">{state.getFiveDayForecast[id].forecast.a[id].day}</li>
             <li className="five-day-day">{state.getFiveDayForecast[id].forecast.b[id].day}</li>
             <li className="five-day-day">{state.getFiveDayForecast[id].forecast.c[id].day}</li>
-            <li className="five-day-day">{state.getFiveDayForecast[id].forecast.d[id].day}</li>
+            <li className="five-day-day">{state.getFiveDayForecast[id].forecast.d[id] ? state.getFiveDayForecast[id].forecast.d[id].day : null}</li>
           </ul>
           <ul className="five-day-temp-ul">
             <li className="five-day-temp">{Math.max(...one)}&deg; / {Math.min(...one)}&deg;</li>
             <li className="five-day-temp">{Math.max(...two)}&deg; / {Math.min(...two)}&deg;</li>
             <li className="five-day-temp">{Math.max(...three)}&deg; / {Math.min(...three)}&deg;</li>
-            <li className="five-day-temp">{Math.max(...four)}&deg; / {Math.min(...four)}&deg;</li>
+            {displayD}
           </ul>
           <button><Link to={`/Extended/${state.getCurrentWeatherByZip[id].location}/${id}`}>View Extended Forecast &raquo;</Link></button>
         </div>

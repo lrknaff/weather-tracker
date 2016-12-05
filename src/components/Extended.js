@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import convertKelvinToFahrenheit from './helpers/temp-conversion'
 
 const ThreeHour = ({ state, params }) => {
+  console.log('state', state)
   let data
   const id = params.id
 
@@ -15,7 +16,7 @@ const ThreeHour = ({ state, params }) => {
   const dataArray = Object.keys(data).map((key) => data[key])
 
   const displayDay = dataArray.map((day, i) => {
-    const theDay = day[0].day
+    const theDay = day[0] ? day[0].day : null
     return (
       <h2 key={i}>{theDay}</h2>
     )
