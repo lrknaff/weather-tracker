@@ -86,7 +86,6 @@ export const modifyFiveDay = (json) => {
 }
 
 export const receiveCurrentExtendedForecast = (json) => {
-  console.log('json in current extended', json)
   return {
     type: 'RECEIVE_CURRENT_EXTENDED',
     data: modifyFiveDay(json),
@@ -94,7 +93,6 @@ export const receiveCurrentExtendedForecast = (json) => {
 }
 
 export const receiveFiveDayForecast = (json) => {
-  console.log('json in receive five day forecast', json)
   return {
     type: 'RECEIVE_FIVEDAY_FORECAST',
     data: modifyFiveDay(json),
