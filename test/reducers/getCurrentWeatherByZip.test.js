@@ -35,4 +35,41 @@ describe('getCurrentWeatherByZip reducer', () => {
 
     expect(getCurrentWeatherByZip([], action)).toEqual(expected)
   })
+
+  xit('should remove the correct city when given the REMOVE_PINNED_CITY type', () => {
+    const state = [
+      {
+        forecast: {
+          a: {
+            temp: '77',
+          },
+          b: {
+            temp: '90',
+          },
+          c: {
+            temp: '58',
+          },
+        },
+      },
+    ]
+
+    const action = {
+      type: 'REMOVE_PINNED_CITY',
+      index: 0,
+    }
+
+    const expected = [
+      {
+        'forecast': {
+          'a': {
+            'temp': '90',
+          },
+          'b': {
+            'temp': '58' },
+        },
+      },
+    ]
+
+    expect(getCurrentWeatherByZip(state, action)).toEqual(expected)
+  })
 })

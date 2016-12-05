@@ -4,14 +4,14 @@ import axios from 'axios'
 import HeaderContainer from '../containers/HeaderContainer'
 import CardContainer from '../containers/CardContainer'
 import DashboardContainer from '../containers/DashboardContainer'
-import { fetchForecast, updateLocation } from '../actions/index'
+import { fetchForecast, fetchCurrentLocationForecast } from '../actions/index'
 
 class App extends Component {
   componentDidMount() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
-        this.props.updateLocation(position)
         this.props.fetchForecast(position)
+        this.props.fetchCurrentLocationForecast(position)
       })
     }
   }
@@ -27,7 +27,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  updateLocation: React.PropTypes.func.isRequired,
+  fetchCurrentLocationForecast: React.PropTypes.func.isRequired,
   fetchForecast: React.PropTypes.func.isRequired,
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { updateLocation, fetchForecast } from '../actions/index'
+import { fetchCurrentLocationForecast, fetchForecast } from '../actions/index'
 import App from '../components/App'
 
 const mapStateToProps = (state) => ({
@@ -12,8 +12,8 @@ const mapDispatchToProps = (dispatch) => {
     fetchForecast: (position) => {
       dispatch(fetchForecast(position))
     },
-    updateLocation: (position) => {
-      dispatch(updateLocation(position))
+    fetchCurrentLocationForecast: (position) => {
+      dispatch(fetchCurrentLocationForecast(position))
     },
   }
 }
