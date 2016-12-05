@@ -18,13 +18,14 @@ const ThreeHour = ({ state, params }) => {
   const displayData = dataArray.map((day) => {
     return day.map((hour, i) => {
       return (
-        <div key={i} className="extended-forecast-each-card" id={hour.day}>
+        <div key={i} className="extended-forecast-each-card" id={i}>
           <ul>
             <li>{hour.day}</li>
             <li>{hour.time}</li>
             <li>{Math.floor(convertKelvinToFahrenheit(hour.temp))}&deg;</li>
             <li>{hour.description}</li>
           </ul>
+          <br /><br /><br />
         </div>
       )
     })
