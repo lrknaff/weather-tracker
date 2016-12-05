@@ -5,24 +5,13 @@ import Loader from './loader'
 
 class Header extends Component {
   render() {
-    const { state, test, fakeLocation, fakeTemp, fakeWeatherType } = this.props
-
-    let location
-    let temp
-    let weatherType
-
-    if (test) {
-      location = fakeLocation
-      temp = fakeTemp
-      weatherType = fakeWeatherType
-    } else {
-      location = state.getCurrentWeather.location
-      temp = state.getCurrentWeather.temp
-      weatherType = state.getCurrentWeather.weatherType
-    }
-
+    const { state } = this.props
     let data
-    let loading
+
+    const location = state.getCurrentWeather.location
+    const temp = state.getCurrentWeather.temp
+    const weatherType = state.getCurrentWeather.weatherType
+
     if (this.props.test || state.getCurrentWeather.temp) {
       const tempF = Math.floor(convertKelvinToFahrenheit(temp))
       data = (
