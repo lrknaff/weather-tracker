@@ -1,11 +1,15 @@
+.dashboard {
+  text-align: center;
+}
+
 .card-container {
   display: inline-block;
+  background: rgb(198, 198, 198);
   border-radius: 5px;
-  border: 1px solid black;
   text-align: center;
   font-size: 20px;
   font-weight:100;
-  height: 50vh;
+  height: 450px;
   width: 310px;
   margin: 30px 15px 30px 15px;
   vertical-align: top;
@@ -20,7 +24,8 @@
 }
 
 .card-extended-info {
-  background-color: white;
+  position: relative;
+  margin-top: -35px;
 }
 
 #a {
@@ -42,38 +47,39 @@
 }
 
 .link-wrapper {
-  width: 50px;
-  height: 50px;
+  background: #707070;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   margin: 0 auto;
   position: relative;
-  // left: 160px;
 }
 
 .add-city-link {
-  background: url(../images/plus.svg) no-repeat;
   height: 30px;
 
   .plus-horiz {
-    width: 50px;
-    height: 10px;
-    background-color: #484848;
-    margin-top: 20px;
-    /* margin-right: 25px; */
-    left: 0;
+    width: 35px;
+    height: 8px;
+    background-color: rgb(198, 198, 198);
+    margin-top: 26px;
+    left: 13px;
     position: absolute;
   }
 
   .plus-vert {
-    width: 10px;
-    height: 50px;
-    background-color: #484848;
+    width: 8px;
+    height: 35px;
+    background-color: #c6c6c6;
     position: absolute;
     margin-left: 20px;
-    right: 20px
+    right: 26px;
+    top: 13px;
   }
 
   p {
-    color: white;
+    color: #707070;
+    padding: 15px;
   }
 
 }

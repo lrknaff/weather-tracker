@@ -49,11 +49,11 @@ class FiveDay extends Component {
       )
     } else {
       data = (
-        <h2>Loading...</h2>
+        null
       )
     }
     return (
-      <div>
+      <div className="five-day">
         {data}
       </div>
     )
