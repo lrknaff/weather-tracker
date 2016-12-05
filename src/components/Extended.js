@@ -27,7 +27,12 @@ const ThreeHour = ({ state, params }) => {
         <div key={i} className="extended-forecast-each-card" id={hour.day}>
           <ul>
             <li className="extended-day">{hour.day}</li>
-            <li className="extended-time">{hour.time}</li>
+            <li className="extended-time">{hour.time === '0 PM' ? //eslint-disable-line
+                                           '12 PM' :
+                                           hour.time === '0 AM' ?
+                                           '12AM' :
+                                           hour.time}
+            </li>
             <li className="extended-temp">{Math.floor(convertKelvinToFahrenheit(hour.temp))}&deg;</li>
             <li className="extended-description">{hour.description}</li>
           </ul>
