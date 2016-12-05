@@ -23,6 +23,7 @@
     ul {
       text-align: left;
     }
+
     li {
       display: inline-block;
       width: 25%;
@@ -50,4 +51,18 @@
     margin-bottom: 30px;
   }
 
+}
+
+@media screen and (max-width: 400px) {
+  .extended-forecast-each-card {
+    li {
+      .extended-time {
+        text-align: right;
+      }
+
+      .extended-temp {
+        text-align: center;
+      }
+    }
+  }
 }
