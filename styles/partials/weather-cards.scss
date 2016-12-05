@@ -1,26 +1,45 @@
+.dashboard {
+  text-align: center;
+}
+
 .card-container {
   display: inline-block;
+  background: rgb(198, 198, 198);
   border-radius: 5px;
-  border: 1px solid black;
   text-align: center;
   font-size: 20px;
   font-weight:100;
-  height: 50vh;
-  width: 25vw;
+  height: 450px;
+  width: 300px;
   margin: 30px 15px 30px 15px;
   vertical-align: top;
 }
 
 .card-main-info{
+ border-radius: 5px 5px 0 0;
  color: white;
  height: 50%;
  padding-top: 10px;
  padding-bottom: 10px;
- // background: linear-gradient(to bottom, #7B5ECF, #869BFC);
+
+ h2 {
+   font-size: 85px;
+   padding-top: 35px;
+   padding-bottom: 10px;
+ }
+
+ h3 {
+   padding-top: 20px;
+   letter-spacing: 1px;
+ }
+
+ h4 {
+   letter-spacing: 1px;
+ }
 }
 
 .card-extended-info {
-  background-color: white;
+  position: relative;
 }
 
 #a {
@@ -42,38 +61,82 @@
 }
 
 .link-wrapper {
-  width: 50px;
-  height: 50px;
+  background: #707070;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   margin: 0 auto;
   position: relative;
-  // left: 160px;
 }
 
 .add-city-link {
-  background: url(../images/plus.svg) no-repeat;
-  height: 30px;
+  position: relative;
+  top: -37px;
 
   .plus-horiz {
-    width: 50px;
-    height: 10px;
-    background-color: #484848;
-    margin-top: 20px;
-    /* margin-right: 25px; */
-    left: 0;
+    width: 35px;
+    height: 8px;
+    background-color: rgb(198, 198, 198);
+    margin-top: 26px;
+    left: 13px;
     position: absolute;
   }
 
   .plus-vert {
-    width: 10px;
-    height: 50px;
-    background-color: #484848;
+    width: 8px;
+    height: 35px;
+    background-color: #c6c6c6;
     position: absolute;
     margin-left: 20px;
-    right: 20px
+    right: 26px;
+    top: 13px;
   }
 
   p {
-    color: white;
+    color: #707070;
+    padding: 15px;
   }
 
+}
+
+.five-day-wrapper {
+  height: 50%;
+}
+
+.five-day {
+  border-radius: 0 0 5px 5px;
+  color: #484848;
+  height: 100%;
+  background: white;
+
+  .five-day-day-ul {
+    float: left;
+    padding: 10px 0 0 15px;
+  }
+
+  .five-day-temp-ul {
+    float: right;
+    padding: 10px 15px 0 0;
+  }
+
+  li {
+    line-height: 45px;
+  }
+
+  .five-day-day {
+    text-align: left;
+  }
+
+  .five-day-temp {
+    text-align: right;
+  }
+
+  button {
+    border-style: none;
+    background: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin-top: 3px;
+  }
 }
