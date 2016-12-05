@@ -26,17 +26,17 @@ const Card = ({ state, id, ifHidden }) => {
       </div>
       <div className="card-extended-info">
         { state.getCurrentWeatherByZip[id] ? null :
-          <Link
-            className="add-city-link"
-            to="/settings"
-            aria-label="Add City"
-          >
-            <div className="link-wrapper">
-              <span className="plus-horiz" />
-              <span className="plus-vert" />
-            </div>
-            <p>Add City</p>
-          </Link> }
+        <Link
+          className="add-city-link"
+          to="/settings"
+          aria-label="Add City"
+        >
+          <div className="link-wrapper">
+            <span className="plus-horiz" />
+            <span className="plus-vert" />
+          </div>
+          <p>Add City</p>
+        </Link> }
       </div>
       { state ? <FiveDay state={state} id={id} /> : null }
     </div>
