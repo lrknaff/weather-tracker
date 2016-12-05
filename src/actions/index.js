@@ -96,6 +96,7 @@ export const modifyFiveDay = (json) => {
 
 
 export const receiveFiveDayForecast = (json) => {
+  console.log('five day forecast json', json)
   return {
     type: 'RECEIVE_FIVEDAY_FORECAST',
     data: modifyFiveDay(json),
@@ -108,6 +109,19 @@ export const updateLocation = (position) => {
   }
 }
 
+export const fetchFiveDay = (city) => {
+  console.log('city in fetchFiveDay', city)
+  return (dispatch) => {
+    return axios.get(`
+      http://api.openweathermap.org/data/2.5/forecast?q=${city},us&${API_KEY}
+      `)
+      .then(json => {
+        dispatch(receiveFiveDayForecast(json))
+      })
+      .catch(error => console.error('Error with api call...', error.message))
+  }
+}
+
 export const fetchForecast = (position) => {
   return (dispatch) => {
     return axios.get(`
@@ -115,18 +129,10 @@ export const fetchForecast = (position) => {
     `)
       .then(json => {
         dispatch(receiveForecast(json))
+        return json
       })
-      .catch(error => console.error('Error with api call...', error.message))
-  }
-}
-
-export const fetchFiveDay = (city) => {
-  return (dispatch) => {
-    return axios.get(`
-      http://api.openweathermap.org/data/2.5/forecast?q=${city},us&${API_KEY}
-      `)
       .then(json => {
-        dispatch(receiveFiveDayForecast(json))
+        dispatch(fetchFiveDay(json.data.name))
       })
       .catch(error => console.error('Error with api call...', error.message))
   }
