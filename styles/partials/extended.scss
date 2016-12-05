@@ -2,6 +2,7 @@
   text-align: center;
 
   .back-to-dashboard-link {
+    display: block;
     padding: 20px 20px;
     text-decoration: none;
   }
@@ -9,23 +10,45 @@
   .extended-city-location {
     font-size: 34px;
     margin: 20px auto;
+    margin-bottom: 30px;
   }
 
   .extended-forecast-each-card {
-    // display: flex;
-    display: inline-block;
-    height: 100px;
-    width: 100px;
-  }
+    display: block;
+    position: relative;
+    margin: 25px auto;
+    width: 90%;
+    height: 21px;
 
-  #Monday {
+    ul {
+      text-align: left;
+    }
 
+    li {
+      display: inline-block;
+      width: 25%;
+      text-align: left;
+    }
+
+    hr {
+       border: 0;
+       height: 1px;
+       background: #CCC;
+       background-image: -webkit-linear-gradient(left, #ccc, #ccc, #ccc);
+       background-image: -o-linear-gradient(left, #ccc, #ccc, #ccc);
+       background-image: linear-gradient(to right, #ccc, #ccc, #ccc);
+    }
   }
 
   .display-data-container {
-    display: inline-block;
+    background: white;
     height: 700px;
-    width: 700px;
+    margin: 0 auto;
+    overflow-y: scroll;
+    position: relative;
+    max-width: 700px;
+    width: 90%;
+    margin-bottom: 30px;
   }
 
 }
