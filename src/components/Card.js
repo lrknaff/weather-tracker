@@ -23,7 +23,18 @@ const Card = ({ state, id, ifHidden }) => {
         <h4>{ state.getCurrentWeatherByZip[id] ? `and ${state.getCurrentWeatherByZip[id].weatherType.toLowerCase()}` : null}</h4>
       </div>
       <div className="card-extended-info">
-        <p>{ state.getCurrentWeatherByZip[id] ? null : <Link className="add-city-link" to="/settings" aria-label="Add City"><div className="link-wrapper"><span className="plus-horiz" /><span className="plus-vert" /></div><p>Add City</p></Link> }</p>
+        { state.getCurrentWeatherByZip[id] ? null :
+          <Link
+            className="add-city-link"
+            to="/settings"
+            aria-label="Add City"
+          >
+            <div className="link-wrapper">
+              <span className="plus-horiz" />
+              <span className="plus-vert" />
+            </div>
+            <p>Add City</p>
+          </Link> }
       </div>
       <FiveDay state={state} id={id} />
     </div>
