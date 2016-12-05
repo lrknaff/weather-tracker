@@ -1,10 +1,22 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 
-const Settings = ({ fetchForecastByZip, state }) => {
+const Settings = ({ fetchForecastByZip, state, removePinnedCity }) => {
   let input
   const cities = state.getCurrentWeatherByZip ?
-                 state.getCurrentWeatherByZip.map((city, i) => <div key={i}>{city.location}</div>) :
+                 state.getCurrentWeatherByZip.map((city, i) => {
+                   return (
+                     <div key={i}>
+                       <button
+                         className="remove-button"
+                         onClick={() => removePinnedCity(i)} // pass in id
+                       >
+                         X
+                       </button>
+                       <p className="location">{city.location}</p>
+                     </div>
+                   )
+                 }) :
                  null
 
   return (
@@ -31,6 +43,7 @@ const Settings = ({ fetchForecastByZip, state }) => {
 
 Settings.propTypes = {
   fetchForecastByZip: PropTypes.func.isRequired,
+  removePinnedCity: PropTypes.func.isRequired,
 }
 
 export default Settings
