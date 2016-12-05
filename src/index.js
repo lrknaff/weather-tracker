@@ -1,7 +1,7 @@
 import { render } from 'react-dom'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
-import { browserHistory } from 'react-router'
+import { browserHistory, hashHistory } from 'react-router'
 import React from 'react'
 import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
@@ -18,7 +18,7 @@ const store = createStore(reducer, enhancers, applyMiddleware(...middleware))
 
 render(
   <Provider store={store}>
-    <Routes history={browserHistory} />
+    <Routes history={hashHistory} />
   </Provider>,
   document.getElementById('root')
 )
