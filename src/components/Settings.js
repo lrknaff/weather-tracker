@@ -35,8 +35,9 @@ const Settings = ({ fetchForecastByZip, state, removePinnedCity }) => {
           fetchForecastByZip(input.value)
           input.value = ''
         }}
+        className="add-city-button"
       >Submit</button>
-      <p><Link to="/">Back to Home</Link></p>
+      <p className="back-to-home-link-from-settings"><Link to="/">Back to Home &raquo;</Link></p>
     </div>
   )
 }
