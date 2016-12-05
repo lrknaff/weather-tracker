@@ -10,16 +10,32 @@
   font-size: 20px;
   font-weight:100;
   height: 450px;
-  width: 310px;
+  width: 300px;
   margin: 30px 15px 30px 15px;
   vertical-align: top;
 }
 
 .card-main-info{
+ border-radius: 5px 5px 0 0;
  color: white;
  height: 50%;
  padding-top: 10px;
  padding-bottom: 10px;
+
+ h2 {
+   font-size: 85px;
+   padding-top: 35px;
+   padding-bottom: 10px;
+ }
+
+ h3 {
+   padding-top: 20px;
+   letter-spacing: 1px;
+ }
+
+ h4 {
+   letter-spacing: 1px;
+ }
 }
 
 .card-extended-info {
@@ -88,6 +104,30 @@
 }
 
 .five-day {
+  border-radius: 0 0 5px 5px;
+  color: #484848;
   height: 100%;
   background: white;
+
+  .five-day-day-ul {
+    float: left;
+    padding: 10px 15px;
+  }
+
+  .five-day-temp-ul {
+    float: right;
+    padding: 10px 15px;
+  }
+
+  li {
+    line-height: 45px;
+  }
+
+  .five-day-day {
+    text-align: left;
+  }
+
+  .five-day-temp {
+    text-align: right;
+  }
 }
