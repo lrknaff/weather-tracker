@@ -1,7 +1,7 @@
-const setLocation = (state = {}, action) => {
+const setLocation = (state = [], action) => {
   switch (action.type) {
-    case 'RECEIVE_LOCATION':
-      return Object.assign({}, { latitude: action.latitude, longitude: action.longitude })
+    case 'RECEIVE_CURRENT_EXTENDED':
+      return [...state, { forecast: action.data }]
     default:
       return state
   }

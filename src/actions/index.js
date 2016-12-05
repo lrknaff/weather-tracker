@@ -3,15 +3,6 @@ import moment from 'moment'
 
 const API_KEY = 'APPID=7b05601290f3c029e2162277fc5b288d'
 
-export const receiveLocation = (position) => {
-  return {
-    type: 'RECEIVE_LOCATION',
-    completed: false,
-    latitude: position.coords.latitude,
-    longitude: position.coords.longitude,
-  }
-}
-
 export const receiveForecast = (json) => {
   return {
     type: 'RECEIVE_FORECAST',
@@ -94,23 +85,21 @@ export const modifyFiveDay = (json) => {
   }
 }
 
+export const receiveCurrentExtendedForecast = (json) => {
+  return {
+    type: 'RECEIVE_CURRENT_EXTENDED',
+    data: modifyFiveDay(json),
+  }
+}
 
 export const receiveFiveDayForecast = (json) => {
-  console.log('five day forecast json', json)
   return {
     type: 'RECEIVE_FIVEDAY_FORECAST',
     data: modifyFiveDay(json),
   }
 }
 
-export const updateLocation = (position) => {
-  return (dispatch) => {
-    return dispatch(receiveLocation(position))
-  }
-}
-
 export const fetchFiveDay = (city) => {
-  console.log('city in fetchFiveDay', city)
   return (dispatch) => {
     return axios.get(`
       http://api.openweathermap.org/data/2.5/forecast?q=${city},us&${API_KEY}
@@ -129,10 +118,6 @@ export const fetchForecast = (position) => {
     `)
       .then(json => {
         dispatch(receiveForecast(json))
-        return json
-      })
-      .then(json => {
-        dispatch(fetchFiveDay(json.data.name))
       })
       .catch(error => console.error('Error with api call...', error.message))
   }
@@ -149,6 +134,18 @@ export const fetchForecastByZip = (zip) => {
       })
       .then(json => {
         dispatch(fetchFiveDay(json.data.name))
+      })
+      .catch(error => console.error('Error with api call...', error.message))
+  }
+}
+
+export const fetchCurrentLocationForecast = (position) => {
+  return (dispatch) => {
+    return axios.get(`
+      http://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&${API_KEY}
+    `)
+      .then(json => {
+        dispatch(receiveCurrentExtendedForecast(json))
       })
       .catch(error => console.error('Error with api call...', error.message))
   }
