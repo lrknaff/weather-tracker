@@ -18,7 +18,7 @@ const ThreeHour = ({ state, params }) => {
   const displayData = dataArray.map((day) => {
     return day.map((hour, i) => {
       return (
-        <div key={i}>
+        <div key={i} className="extended-forecast-each-card" id={hour.day}>
           <ul>
             <li>{hour.day}</li>
             <li>{hour.time}</li>
@@ -35,7 +35,9 @@ const ThreeHour = ({ state, params }) => {
         Back to Dashboard &raquo;
       </Link>
       <h2 className="extended-city-location">{params.name}</h2>
-      {displayData}
+      <div className="display-data-container">
+        {displayData}
+      </div>
     </div>
   )
 }
