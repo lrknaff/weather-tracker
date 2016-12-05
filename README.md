@@ -1,5 +1,4 @@
-#Weather Tracker - A Weather App
-
+#Weather Tracker
 > A Weather App
 
 ##About
