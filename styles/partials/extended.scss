@@ -14,6 +14,18 @@
   .extended-forecast-each-card {
     // display: flex;
     display: inline-block;
+    height: 100px;
+    width: 100px;
+  }
+
+  #Monday {
+
+  }
+
+  .display-data-container {
+    display: inline-block;
+    height: 700px;
+    width: 700px;
   }
 
 }
